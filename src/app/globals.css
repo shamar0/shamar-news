@@ -1,0 +1,77 @@
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+    @import 'bootstrap/dist/css/bootstrap.min.css';
+
+    
+    * {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .main-content {
+      flex: 1;
+    }
+
+    .navbar {
+      position: sticky !important;
+      top: 0;
+      height: 5.2rem;
+      padding: 10px 20px;
+      box-shadow: 0 6px 6px rgba(0, 0, 0, 0.219);
+      background-color: #f0f0f0;
+      z-index: 1000;
+    }
+
+/* loading.css */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loader {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+
+.loader::before, .loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 8px solid #000;
+  animation: spin 1.2s linear infinite;
+}
+
+.loader::before {
+  border-color: #323232d1 transparent transparent transparent;
+}
+
+.loader::after {
+  border-color: #323232d1 transparent transparent transparent;
+  animation-delay: -0.6s;
+}
+
