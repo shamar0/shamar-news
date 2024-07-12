@@ -10,7 +10,9 @@
       {
         "js": ["scripts/content.js"],
         "css":["scripts/content.css"],
-        "matches": ["https://next-news-app-peach.vercel.app/*"]
+        "matches": ["https://next-news-app-peach.vercel.app/*",
+                   "https://shamar-news-git-main-shamars-projects.vercel.app/*"
+                   ]
       }
     ]
   }
