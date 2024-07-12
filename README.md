@@ -26,8 +26,10 @@ Pagination: Implementing pagination was crucial to ensure the website could hand
 Frontend with Next.js: The frontend was built using Next.js, enhancing the user experience with a modern and responsive design. This transition also involved maintaining the existing functionality and ensuring smooth integration with the backend. Next.js also improved the site's SEO through server-side rendering.
 
 Deployment:
+
 Frontend: Deployed on Vercel, providing a scalable and efficient platform for the Next.js application.
-Backend: Deployed on AWS, ensuring it could handle increased traffic. This included setting up an Elastic Beanstalk environment for the API and managing the database on an AWS-hosted MongoDB service. The API generated from AWS is used to retrieve data.
+
+Backend: Deployed on AWS, ensuring it could handle increased traffic. This included setting up an Elastic Beanstalk environment for the API and managing the database on an AWS-hosted MongoDB service. The API generated from AWS is used to retrieve data (The code of backend part is in news-insummary repo).
 
 Voice Assistant Integration: To further enhance user engagement, I added a voice assistant feature that allows users to navigate the website using voice commands. This involved using speech recognition APIs and integrating them with the Next.js frontend.
 
