@@ -19,6 +19,9 @@ News Website Project
 It is a news website that brings together live news from various sources into one user-friendly platform. Here’s a brief overview of what it offers:
 
 Live News Updates: The website gathers real-time news from several reputable sources, ensuring that users always have access to the latest information.
+
 Smooth Navigation: The site is designed to handle large amounts of news efficiently, allowing users to browse through articles easily with features like pagination.
+
 Modern and Responsive Design: Built with the latest web technologies, the website offers a sleek and modern look that works well on both desktop and mobile devices.
+
 Voice Assistant Integration: Users can navigate the website using voice commands such as "next page or go to next page", "previous page", "refresh", "scroll down", and "scroll up", making it more accessible and interactive.
