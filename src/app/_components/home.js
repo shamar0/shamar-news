@@ -21,7 +21,7 @@ export default function Home({ data }) {
                       <br />
                       <span style={{color: '#44444D',fontSize:"16px",lineHeight:"22px",marginTop:"8px",fontWeight:"300"}}>{data[i].content}</span>
                       <br />
-                      <Link href={data[i].read_more} target="_blank" rel="noopener noreferrer">Read More</Link>
+                      <Link href={data[i].read_more} target="_blank" rel="noopener noreferrer" className="read-more">Read More</Link>
                     </p>
                   </div>
                 </div>

@@ -18,15 +18,15 @@
     width: 80%;
     padding: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border: 0.2px solid rgba(22, 22, 22, 0.153); /* Just for visual clarity */
+    border: 0.2px solid rgba(22, 22, 22, 0.153); 
     display: flex;
     flex-direction: row;
     align-items: stretch;
 }
 
 .image-container {
-    flex: 0 0 33.3333%; /* This makes sure the image container takes up one-third of the card */
-    overflow: hidden; /* Ensures that the image does not overflow the container */
+    flex: 0 0 33.3333%; 
+    overflow: hidden; 
 }
 
 .card img {
@@ -55,17 +55,55 @@
     flex-direction: column;
 }
 
+.read-more{
+    text-decoration: none;
+    color: #ff6666;
+}
+
 .footer {
-    background-color: #323232 !important;
+    height: 6rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.721);
+  }
+  
+  .footer-text{
+    color: #ff3333;
+  }
+  
+  
+  .footer-all :hover{
+    color:#ff6666 ;
+  }
+  
+  .btn-container{
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+.nxpv-btn{
+    width: 34%;
+    background: linear-gradient(135deg, #ff9999, #ff6666, #ff3333);
+    border-radius: 4px;
     color: #fff;
-  }
-  
-  .footer-logo img {
-    max-width: 150px;
-  }
-  
-  
-  
+    align-items: center;
+    margin-right: 0.3rem;
+    margin-left: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+}
+
+.btn{
+   font-size: 1.5rem !important;
+   width: 100% !important;
+   font-weight: 600;
+}
+
+
   
   
   

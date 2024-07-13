@@ -4,6 +4,7 @@ import Home from "./home";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import Loading from "../loading";
+import '../../../public/style.css'
 
 export default function PageClient({ initialPage, initialLimit, initialData }) {
   const router = useRouter();
@@ -46,87 +47,26 @@ export default function PageClient({ initialPage, initialLimit, initialData }) {
     <div>
       <Home data={data} />
       <br /> <br />
+      <div className="btn-container">
       {page > 1 && (
+          <div className="prev-btn nxpv-btn">
         <button
-          className="btn position-absolute"
-          style={{ left: "3rem", fontSize: "1.5rem", textDecoration: "underline" }}
+          className="btn"
           onClick={() => handleNavigation(page - 1)}
         >
-          <i className="fa-solid fa-arrow-left"></i> Previous
+          <i className="fa-solid fa-arrow-left"></i> Prev
         </button>
+        </div>
       )}
+      <div className="next-btn nxpv-btn">
       <button
-        className="btn position-absolute"
-        style={{ right: "3rem", fontSize: "1.5rem", textDecoration: "underline" }}
+        className="btn"
         onClick={() => handleNavigation(page + 1)}
       >
         Next <i className="fa-solid fa-arrow-right"></i>
       </button>
-      <br />
+      </div>
+      </div>
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-// 'use client';
-// import { useEffect, useState } from "react";
-// import Home from "./home";
-// import { useRouter } from "next/navigation";
-// import axios from "axios";
-
-
-// export default function PageClient({ initialPage, initialLimit, initialData }) {
-//   const router = useRouter();
-//   const [page, setPage] = useState(initialPage);
-//   const [limit, setLimit] = useState(initialLimit);
-//   const [data, setData] = useState(initialData);
-
-//   useEffect(() => {
-//     async function getData() {
-//       const res = await axios.get(`/api/news?page=${page}&limit=${limit}`);
-//       const data = res.data;
-//       const offset = (page - 1) * limit;
-//       const paginatedData = data.slice(offset, offset + limit);
-//       // console.log(res.data);
-//       // setData(data);
-//       setData(paginatedData);
-//     }
-//     if (page !== initialPage || limit !== initialLimit) {
-//       getData();
-//     }
-//     if (!initialData.length) {
-//       getData();
-//     }
-//   }, [page, limit]);
-
-//   const handleNavigation = (newPage) => {
-//     setPage(newPage);
-//     router.push(`/news?page=${newPage}&limit=${limit}`, undefined, { shallow: true });
-//   };
-
-//   return (
-//     <div>
-//       <Home data={data} />
-//       <br /> <br />
-//       {page > 1 && (
-//         <button className="btn position-absolute" style={{ left: "3rem", fontSize: "1.5rem", textDecoration: "underline" }} onClick={() => handleNavigation(page - 1)}>
-//           <i className="fa-solid fa-arrow-left"></i> Previous
-//         </button>
-//       )}
-//       <button className="btn position-absolute" style={{ right: "3rem", fontSize: "1.5rem", textDecoration: "underline" }} onClick={() => handleNavigation(page + 1)}>
-//         Next <i className="fa-solid fa-arrow-right"></i>
-//       </button>
-//       <br />
-//     </div>
-//   );
-// }

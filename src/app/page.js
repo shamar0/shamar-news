@@ -1,10 +1,48 @@
 import Link from "next/link";
+import "./globals.css";
 
 export default function Home() {
   return (
-    <main >
-      <h1>Home</h1>
-      <Link href="/news">NEWS </Link>
+    <main>
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-content">
+          <h1>Hey! I Am Mohammad Shamar</h1>
+          <p>Ambitious Software Developer with excellent frontend and backend development skills.</p>
+          <div className="hero-buttons">
+            <Link href="https://orange-dorice-39.tiiny.site/">
+              Resume
+            </Link>
+          </div>
+          <div className="hero-icons">
+            <Link href="https://github.com/shamar0">
+              <i className="fab fa-github"></i>
+            </Link>
+            <Link href="https://www.linkedin.com/in/mohammad-shamar-867ba72ab/">
+              <i className="fab fa-linkedin"></i>
+            </Link>
+          </div>
+        </div>
+        <img src="/profile.jpeg" alt="Profile" className="profile-image-hero" />
+     
+        <div className="profile-section hero-section">
+            <p className="paragraph-home">
+              It is a news website that brings together live news from various sources into one user-friendly platform. Here’s a brief overview of what it offers:
+            </p>
+        <ul className="list-home">
+          <li><strong>Live News Updates:</strong> The website gathers real-time news from several reputable sources, ensuring that users always have access to the latest information.</li>
+          <li><strong>Smooth Navigation:</strong> The site is designed to handle large amounts of news efficiently, allowing users to browse through articles easily with features like pagination.</li>
+          <li><strong>Modern and Responsive Design:</strong> Built with the latest web technologies, the website offers a sleek and modern look that works well on both desktop and mobile devices.</li>
+          <li><strong>Voice Assistant Integration:</strong> Users can navigate the website using voice commands such as "next page or go to next page", "previous page", "refresh", "scroll down", and "scroll up", making it more accessible and interactive.</li>          
+        </ul>
+
+        </div>
+        <div className="link-container">
+          <Link href="/news" className="link-home">
+            <i className="fas fa-arrow-right arrow"></i> Click here to go
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }
