@@ -1,5 +1,6 @@
 import Link from "next/link";
 import "./globals.css";
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -23,7 +24,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <img src="/profile.jpeg" alt="Profile" className="profile-image-hero" />
+        <Image src="/profile.jpeg" alt="Profile" className="profile-image-hero" width={220} height={220}/>
      
         <div className="profile-section hero-section">
             <p className="paragraph-home">
