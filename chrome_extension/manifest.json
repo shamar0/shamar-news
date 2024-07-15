@@ -1,11 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Hello Extensions",
-    "description": "Base Level Extension",
+    "name": "shamar-news extension",
+    "description": "Extension",
     "version": "1.0",
-    "action": {
-      "default_popup": "hello.html"
-    },
     "content_scripts": [
       {
         "js": ["scripts/content.js"],

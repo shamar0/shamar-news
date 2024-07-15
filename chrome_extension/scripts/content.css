@@ -5,7 +5,7 @@
     z-index: 1000;
     height: 63px;
     width: 63px;
-    background-color: #f39200; /* Initial color similar to the image */
+    background: linear-gradient(135deg, #ff9999, #ff6666, #ff3333);
     border: 1px solid #44444D;
     border-radius: 100%;
     transition: background-color 0.7s, transform 0.7s;
@@ -17,7 +17,7 @@
 }
 
 .start-btn:hover {
-    background-color: #e68100; /* Slightly darker shade for hover */
+    background-color: #e68100; 
 }
 
 .start-btn.blinking {

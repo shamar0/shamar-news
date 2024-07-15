@@ -24,6 +24,10 @@
     align-items: stretch;
 }
 
+.card:hover {
+    box-shadow: rgba(50, 50, 93, 0.128) 0px 30px 50px -10px, rgba(0, 0, 0, 0.132) 0px 20px 40px -10px, rgba(10, 37, 64, 0.146) 0px -1px 4px 0px inset;
+}
+
 .image-container {
     flex: 0 0 33.3333%; 
     overflow: hidden; 
@@ -37,7 +41,7 @@
 
 .card-body {
     flex: 1;
-    padding: 0.5rem; /* Example padding */
+    padding: 0.5rem; 
 }
 
 .card-title {
@@ -46,7 +50,7 @@
 
 .card-text {
     flex-grow: 1;
-    overflow-wrap: break-word; /* Ensures long text wraps */
+    overflow-wrap: break-word; 
     word-wrap: break-word;
 }
 
@@ -95,6 +99,10 @@
     justify-content: center;
     align-items: center;
     font-weight: 900;
+    transition: box-shadow 0.2s ease;
+}
+.nxpv-btn:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .btn{
@@ -102,7 +110,6 @@
    width: 100% !important;
    font-weight: 600;
 }
-
 
   
   
