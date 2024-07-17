@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import '../../../public/style.css'
+import Category from './category';
 
 export default function Home({ data }) {
   const dataElements = [];
@@ -31,11 +32,9 @@ export default function Home({ data }) {
         );
       }
   return (
-   
       <div >
-          {dataElements}
-        </div>
-      
-  
+         <Category/>
+         {dataElements}
+      </div>
   );
 }

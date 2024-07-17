@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import 'bootstrap/dist/css/bootstrap.min.css';
 
 .centered-cards {
     display: flex;
@@ -111,6 +110,106 @@
    font-weight: 600;
 }
 
+.filters-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .arrow-btn {
+    position: absolute;
+    z-index: 1;
+    /* color: #44444D; */
+    background-color: whitesmoke;
+    border: none;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+
+.arrow-btn.left {
+    left: 11px;
+}
+
+.arrow-btn.right {
+    right: 8px;
+}
+
   
+  .filters {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+    margin: 16px 40px 0 40px;
+    height: 56px;
+    border-radius: 6px;
+    background-color: rgb(255,255,255) !important;
+    justify-content: flex-start;
+    align-items: center;
+    white-space: nowrap; 
+  }
   
+  .filters::-webkit-scrollbar {
+    display: none;
+  }
   
+  .filters a {
+    text-decoration: none;
+  }
+  
+  .ind-filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 112px;
+    padding: 10px;
+    border-radius: 6px;
+    margin-left: 12px;
+    margin-right: 12px;
+    font-size: 16px;
+    background-color: rgb(255,255,255);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    flex-shrink: 0; /* Prevent shrinking */
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .category-text {
+    color: #44444ddc;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .ind-filter:hover {
+    background: linear-gradient(135deg, #ff9999, #ff6666, #ff3333);;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  
+  .ind-filter.active {
+    background: linear-gradient(135deg, #ff9999, #ff6666, #ff3333);
+    color: #fff;
+  }
+  
+  .ind-filter.active .category-text {
+    color: white;
+  }
+  
+  .ind-filter:hover .category-text {
+    color: white;
+  }
+
+  /* Hide arrow buttons by default */
+.arrow-btn {
+    display: none;
+  }
+  
+  /* Show arrow buttons on small screens or when necessary */
+  @media screen and (max-width: 768px) {
+    .arrow-btn {
+      display: block;
+    }
+  }
