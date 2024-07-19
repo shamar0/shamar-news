@@ -1,4 +1,4 @@
-import Sports from "@/app/_components/sports";
+import Politics from "@/app/_components/politics";
 
 export default function SportsPage({ searchParams }) {
   const initialPage = parseInt(searchParams.page) || 1;
@@ -6,7 +6,7 @@ export default function SportsPage({ searchParams }) {
   
   return (
     <>
-    <Sports initialPage={initialPage} initialLimit={initialLimit} initialData={[]} />
+    <Politics initialPage={initialPage} initialLimit={initialLimit} initialData={[]} />
     </>
   )
 }

@@ -1,4 +1,4 @@
-import IT from "../../_components/it";
+import IT from "@/app/_components/it";
 
 export default function SportsPage({ searchParams }) {
   const initialPage = parseInt(searchParams.page) || 1;

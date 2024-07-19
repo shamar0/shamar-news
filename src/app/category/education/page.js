@@ -1,4 +1,4 @@
-import Education from "../../_components/education";
+import Education from "@/app/_components/education";
 
 export default function EducationPage({ searchParams }) {
   const initialPage = parseInt(searchParams.page) || 1;

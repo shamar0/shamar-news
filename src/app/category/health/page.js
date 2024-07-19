@@ -1,4 +1,4 @@
-import Health from "../../_components/health";
+import Health from "@/app/_components/health";
 
 export default function HealthPage({ searchParams }) {
   const initialPage = parseInt(searchParams.page) || 1;

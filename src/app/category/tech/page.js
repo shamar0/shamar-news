@@ -1,4 +1,4 @@
-import Tech from "../../_components/tech";
+import Tech from "@/app/_components/tech";
 
 export default function TechPage({ searchParams }) {
   const initialPage = parseInt(searchParams.page) || 1;

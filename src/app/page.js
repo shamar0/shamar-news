@@ -34,7 +34,7 @@ export default function Home() {
           <li><strong>Live News Updates:</strong> The website gathers real-time news from several reputable sources, ensuring that users always have access to the latest information.</li>
           <li><strong>Smooth Navigation:</strong> The site is designed to handle large amounts of news efficiently, allowing users to browse through articles easily with features like pagination.</li>
           <li><strong>Modern and Responsive Design:</strong> Built with the latest web technologies, the website offers a sleek and modern look that works well on both desktop and mobile devices.</li>
-          <li><strong>Voice Assistant Integration:</strong> Users can navigate the website using voice commands such as "next page or go to next page", "previous page", "refresh", "scroll down", and "scroll up", making it more accessible and interactive.</li>          
+          <li><strong>Voice Assistant Integration(using chrome extension):</strong>Made a chrome extension by using it users can navigate the website using voice commands such as "next page or go to next page", "previous page", "refresh", "scroll down", and "scroll up", making it more accessible and interactive.</li>          
         </ul>
 
         </div>

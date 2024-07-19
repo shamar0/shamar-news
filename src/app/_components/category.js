@@ -27,25 +27,26 @@ export default function Category() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
-  const scroll = (direction) => {
-    if (scrollRef.current) {
-      const scrollAmount = direction === 'left' ? -200 : 200;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  };
-
+  
+  
   const handleClick = (path) => {
     setActiveLink(path);
   };
-
+  
+  
   return (
     <div className="filters-wrapper">
+
       <div className="filters" ref={scrollRef}>
-      {showArrows && <button className="arrow-btn left" onClick={() => scroll('left')}>&lt;</button>}
         <div className={`ind-filter ${activeLink === '/news' ? 'active' : ''}`}>
           <Link className='category-text' href="/news" onClick={() => handleClick('/news')}>
            <span> All</span>
+          </Link>
+        </div>
+
+        <div className={`ind-filter ${activeLink === '/category/trending' ? 'active' : ''}`}>
+          <Link className='category-text' href="/category/trending" onClick={() => handleClick('/category/trending')}>
+            <span>Trending</span>
           </Link>
         </div>
 
@@ -68,25 +69,42 @@ export default function Category() {
         </div>
 
         <div className={`ind-filter ${activeLink === '/category/it' ? 'active' : ''}`}>
-          <Link className='category-text' href="/category/it" onClick={() => handleClick('/category/sports')}>
+          <Link className='category-text' href="/category/it" onClick={() => handleClick('/category/it')}>
             <span> IT</span>
           </Link>
         </div>
 
         <div className={`ind-filter ${activeLink === '/category/business' ? 'active' : ''}`}>
-          <Link className='category-text' href="/category/business" onClick={() => handleClick('/category/startup')}>
+          <Link className='category-text' href="/category/business" onClick={() => handleClick('/category/business')}>
             <span> Business</span>
           </Link>
         </div>
 
         <div className={`ind-filter ${activeLink === '/category/tech' ? 'active' : ''}`}>
-          <Link className='category-text' href="/category/tech" onClick={() => handleClick('/category/startup')}>
+          <Link className='category-text' href="/category/tech" onClick={() => handleClick('/category/tech')}>
             <span> Tech</span>
           </Link>
         </div>
-        
-      {showArrows && <button className="arrow-btn right" onClick={() => scroll('right')}>&gt;</button>}
+
+        <div className={`ind-filter ${activeLink === '/category/entertainment' ? 'active' : ''}`}>
+          <Link className='category-text' href="/category/entertainment" onClick={() => handleClick('/category/entertainment')}>
+            <span> Entertainment</span>
+          </Link>
+        </div>
+
+        <div className={`ind-filter ${activeLink === '/category/politics' ? 'active' : ''}`}>
+          <Link className='category-text' href="/category/politics" onClick={() => handleClick('/category/politics')}>
+            <span> Politics</span>
+          </Link>
+        </div>
+
+        <div className={`ind-filter ${activeLink === '/category/science&enviroment' ? 'active' : ''}`}>
+          <Link className='category-text' href="/category/science&enviroment" onClick={() => handleClick('/category/science&enviroment')}>
+            <span>Science/Enviroment</span>
+          </Link>
+        </div>
       </div>
+      
     </div>
   );
 }
