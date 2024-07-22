@@ -69,7 +69,33 @@
   text-decoration: none;
   color: #ff6666;
 }
-
+ @media (max-width:500px) {
+  .card-title{
+    font-size: 14px !important;
+    line-height: 13px !important;
+  }
+  .card-text{
+    font-size: 9px !important;
+    line-height: 11px !important;
+  }
+  .card {
+    width: 90%;
+    padding: 0.5rem;
+    align-items: center;
+ }
+ .image-container{
+  border-top-left-radius: 5px !important;
+  border-top-right-radius: 5px !important;
+ }
+ 
+ .card-title{
+  margin-bottom: 2px;
+ }
+ .card-container{
+  margin-top: 10px !important;
+ }
+ }
+  
 .footer {
   height: 6rem;
   display: flex;
