@@ -14,7 +14,7 @@ export default function Home({ data }) {
               <div className="row g-0 w-100 iic">
                 <div className="col-md-4 image-container" 
                 style={{ height: data[i].category === 'Entertainment' ? '200px' : 'auto' }}>
-                  <Image className="c-img" height={200} width={500} src={data[i].img_url || 'https://static.vecteezy.com/system/resources/previews/000/197/882/original/vector-news-headlines-background-with-earth-planet.jpg'} className="img-fluid" alt="Card image" />
+                  <Image height={200} width={400} src={data[i].img_url || 'https://static.vecteezy.com/system/resources/previews/000/197/882/original/vector-news-headlines-background-with-earth-planet.jpg'} className="img-fluid" alt="Card image" />
                 </div>
                 <div className="col-md-8">
                   <div className="card-body">

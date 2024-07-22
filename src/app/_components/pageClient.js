@@ -6,11 +6,11 @@ import axios from "axios";
 import Loading from "../loading";
 import '../../../public/style.css'
 
-export default function PageClient({ initialPage, initialLimit, initialData }) {
+export default function PageClient({ initialPage, initialLimit}) {
   const router = useRouter();
   const [page, setPage] = useState(initialPage);
   const [limit, setLimit] = useState(initialLimit);
-  const [data, setData] = useState(initialData);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -28,11 +28,9 @@ export default function PageClient({ initialPage, initialLimit, initialData }) {
         setLoading(false);
       }
     }
-
-    if (page !== initialPage || limit !== initialLimit || !initialData.length) {
       getData();
-    }
-  }, [page, limit, initialPage, initialLimit, initialData]);
+    
+  }, [page, limit]);
 
   const handleNavigation = (newPage) => {
     setPage(newPage);
