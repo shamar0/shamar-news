@@ -6,11 +6,11 @@ import axios from "axios";
 import Loading from "../loading";
 import '../../../public/style.css'
 
-export default function PageClient({ initialPage, initialLimit}) {
+export default function PageClient({ initialPage, initialLimit, initialData }) {
   const router = useRouter();
   const [page, setPage] = useState(initialPage);
   const [limit, setLimit] = useState(initialLimit);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(initialData);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -28,9 +28,12 @@ export default function PageClient({ initialPage, initialLimit}) {
         setLoading(false);
       }
     }
+
+    if (page !== initialPage || limit !== initialLimit || !initialData.length) {
       getData();
-    
-  }, [page, limit]);
+    }
+  }, [page, limit, initialPage, initialLimit, initialData]);
+
 
   const handleNavigation = (newPage) => {
     setPage(newPage);
@@ -44,7 +47,6 @@ export default function PageClient({ initialPage, initialLimit}) {
   return (
     <div>
       <Home data={data} />
-      <br /> <br />
       <div className="btn-container">
       {page > 1 && (
           <div className="prev-btn nxpv-btn">

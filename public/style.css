@@ -94,6 +94,16 @@
  .card-container{
   margin-top: 10px !important;
  }
+ .nxpv-btn {
+  height: 25px;
+}
+.btn-container{
+  margin-top: 7px !important;
+}
+.footer{
+  height: 3rem !important;
+  margin-top: 13px !important;
+}
  }
   
 .footer {
@@ -117,6 +127,7 @@
   display: flex;
   justify-content: center !important;
   align-items: center !important;
+  margin-top: 25px;
 }
 
 .nxpv-btn {
