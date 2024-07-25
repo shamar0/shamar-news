@@ -11,29 +11,35 @@ export default function PageClient({ initialPage, initialLimit, initialData }) {
   const [page, setPage] = useState(initialPage);
   const [limit, setLimit] = useState(initialLimit);
   const [data, setData] = useState(initialData);
+  const [filteredData, setFilteredData] = useState(initialData);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getData() {
       setLoading(true);
       try {
-        const res = await axios.get(`/api/news?page=${page}&limit=${limit}`);
-        const data = res.data;
-        const offset = (page - 1) * limit;
-        const paginatedData = data.slice(offset, offset + limit);
-        setData(paginatedData);
+        let res = await axios.get(`/api/news?page=${page}&limit=${limit}`);
+        res = res.data;
+        setData(res);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
         setLoading(false);
       }
     }
-
-    if (page !== initialPage || limit !== initialLimit || !initialData.length) {
       getData();
-    }
-  }, [page, limit, initialPage, initialLimit, initialData]);
+  }, []);
 
+  useEffect(() => {
+    filterData(data);
+  }, [data,page, limit]);
+
+
+  const filterData= () => {
+        const offset = (page - 1) * limit;
+        const paginatedData = data.slice(offset, offset + limit);
+        setFilteredData(paginatedData);
+  };
 
   const handleNavigation = (newPage) => {
     setPage(newPage);
@@ -46,7 +52,7 @@ export default function PageClient({ initialPage, initialLimit, initialData }) {
 
   return (
     <div>
-      <Home data={data} />
+      <Home data={filteredData} />
       <div className="btn-container">
       {page > 1 && (
           <div className="prev-btn nxpv-btn">

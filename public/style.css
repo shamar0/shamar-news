@@ -71,12 +71,12 @@
 }
  @media (max-width:500px) {
   .card-title{
-    font-size: 14px !important;
-    line-height: 13px !important;
+    font-size: 18px !important;
+    line-height: 18px !important;
   }
   .card-text{
-    font-size: 9px !important;
-    line-height: 11px !important;
+    font-size: 14px !important;
+    line-height: 14px !important;
   }
   .card {
     width: 90%;
