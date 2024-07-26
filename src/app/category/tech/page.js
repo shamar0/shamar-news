@@ -6,7 +6,7 @@ export default function TechPage({ searchParams }) {
   
   return (
     <>
-    <Tech initialPage={initialPage} initialLimit={initialLimit} initialData={[]} />
+    <Tech initialPage={initialPage} initialLimit={initialLimit}/>
     </>
   )
 }

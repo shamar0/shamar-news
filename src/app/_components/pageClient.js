@@ -6,12 +6,12 @@ import axios from "axios";
 import Loading from "../loading";
 import '../../../public/style.css'
 
-export default function PageClient({ initialPage, initialLimit, initialData }) {
+export default function PageClient({ initialPage, initialLimit }) {
   const router = useRouter();
   const [page, setPage] = useState(initialPage);
   const [limit, setLimit] = useState(initialLimit);
-  const [data, setData] = useState(initialData);
-  const [filteredData, setFilteredData] = useState(initialData);
+  const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -21,6 +21,7 @@ export default function PageClient({ initialPage, initialLimit, initialData }) {
         let res = await axios.get(`/api/news?page=${page}&limit=${limit}`);
         res = res.data;
         setData(res);
+        filterData(res);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -32,12 +33,12 @@ export default function PageClient({ initialPage, initialLimit, initialData }) {
 
   useEffect(() => {
     filterData(data);
-  }, [data,page, limit]);
+  }, [page, limit]);
 
 
-  const filterData= () => {
+  const filterData= (dataToFilter) => {
         const offset = (page - 1) * limit;
-        const paginatedData = data.slice(offset, offset + limit);
+        const paginatedData = dataToFilter.slice(offset, offset + limit);
         setFilteredData(paginatedData);
   };
 

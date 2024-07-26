@@ -6,7 +6,7 @@ export default function SportsPage({ searchParams }) {
   
   return (
     <>
-    <IT initialPage={initialPage} initialLimit={initialLimit} initialData={[]} />
+    <IT initialPage={initialPage} initialLimit={initialLimit}/>
     </>
   )
 }

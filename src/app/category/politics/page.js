@@ -6,7 +6,7 @@ export default function SportsPage({ searchParams }) {
   
   return (
     <>
-    <Politics initialPage={initialPage} initialLimit={initialLimit} initialData={[]} />
+    <Politics initialPage={initialPage} initialLimit={initialLimit}/>
     </>
   )
 }

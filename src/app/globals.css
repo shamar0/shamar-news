@@ -53,7 +53,7 @@ body {
   border-bottom-right-radius: 6.8px !important;
 }
 .navbar-search{
-  border: 2px solid #555 !important;
+  border: 1.5px solid #555 !important;
   border-radius: 8.2px;
 }
 .form-control{
@@ -69,6 +69,7 @@ body {
 
 .navbar-search:focus-within {
   box-shadow: 0 0 1px 1px #ff9999;
+  border: 1px solid #ff3333 !important;
 }
 @media (max-width:775px) {
   .navbar {
@@ -80,7 +81,7 @@ body {
     margin-left: 0 !important;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     justify-content: center;
   }
   .nav-logo{
@@ -95,7 +96,6 @@ body {
     width: 100%;
   }
 }
-
 
 
 @keyframes spin {

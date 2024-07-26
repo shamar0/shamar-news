@@ -6,7 +6,7 @@ export default function NewsPage({ searchParams }) {
   
   return (
     <>
-    <PageClient initialPage={initialPage} initialLimit={initialLimit} initialData={[]} />
+    <PageClient initialPage={initialPage} initialLimit={initialLimit} />
     
     </>
   );

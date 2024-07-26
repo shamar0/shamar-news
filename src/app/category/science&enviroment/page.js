@@ -6,7 +6,7 @@ export default function SciencePage({ searchParams }) {
   
   return (
     <>
-    <Science initialPage={initialPage} initialLimit={initialLimit} initialData={[]} />
+    <Science initialPage={initialPage} initialLimit={initialLimit}/>
     </>
   )
 }

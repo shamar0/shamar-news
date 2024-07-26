@@ -6,7 +6,7 @@ export default function EducationPage({ searchParams }) {
   
   return (
     <>
-    <Education initialPage={initialPage} initialLimit={initialLimit} initialData={[]} />
+    <Education initialPage={initialPage} initialLimit={initialLimit}/>
     </>
   )
 }

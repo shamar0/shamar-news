@@ -10,7 +10,7 @@ export default function Navbar() {
   const router = useRouter();
   const initialSearch = searchParams.get("search") || '';
   const [placeholder, setPlaceholder] = useState('Search');
-  const placeholders = ['Search "Virat Kohli"', 'Search "India"', 'Search "Mumbai"', 'Search "Footbal"', 'Search "Olympic"', 'Search "Mountain"'];
+  const placeholders = ['Search "Virat Kohli"', 'Search "India"', 'Search "Meta"','Search "Mumbai"', 'Search "Footbal"', 'Search "Olympic"', 'Search "Mountain"', 'Search "Space"'];
 
   useEffect(() => {
     const changePlaceholder = () => {

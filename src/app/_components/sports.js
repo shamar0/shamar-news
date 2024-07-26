@@ -10,31 +10,39 @@ export default function Sports({ initialPage, initialLimit, initialData }) {
   const router = useRouter();
   const [page, setPage] = useState(initialPage);
   const [limit, setLimit] = useState(initialLimit);
-  const [data, setData] = useState(initialData);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [filteredData, setFilteredData] = useState([]);
+
 
   useEffect(() => {
     async function getData() {
       setLoading(true);
       try {
-        const res = await axios.get(`/api/news?page=${page}&limit=${limit}`);
-        const data = res.data;
-        const filteredData = data.filter(item => item.category == "Sports");
-        const offset = (page - 1) * limit;
-        const paginatedData = filteredData.slice(offset, offset + limit);
-        setData(paginatedData);
+        let res = await axios.get(`/api/news?page=${page}&limit=${limit}`);
+        res = res.data;
+        setData(res);
+        filterData(res);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
         setLoading(false);
       }
     }
-
-    if (page !== initialPage || limit !== initialLimit || !initialData.length) {
       getData();
-    }
+  }, []);
+
+  useEffect(() => {
+    filterData(data);
   }, [page, limit]);
 
+
+  const filterData= (dataToFilter) => {
+    const categorisedData = dataToFilter.filter(item => item.category == "Sports");
+    const offset = (page - 1) * limit;
+    const paginatedData = categorisedData.slice(offset, offset + limit);
+        setFilteredData(paginatedData);
+  };
   const handleNavigation = (newPage) => {
     setPage(newPage);
     router.push(`/category/sports?page=${newPage}&limit=${limit}`, undefined, { shallow: true });
@@ -46,7 +54,7 @@ export default function Sports({ initialPage, initialLimit, initialData }) {
 
   return (
     <div>
-      <Home data={data} />
+      <Home data={filteredData} />
       <br /> <br />
       <div className="btn-container">
       {page > 1 && (

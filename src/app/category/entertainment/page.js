@@ -6,7 +6,7 @@ export default function EntertainmentPage({ searchParams }) {
   
   return (
     <>
-    <Entertainment initialPage={initialPage} initialLimit={initialLimit} initialData={[]} />
+    <Entertainment initialPage={initialPage} initialLimit={initialLimit}/>
     </>
   )
 }

@@ -6,7 +6,7 @@ export default function StartupPage({ searchParams }) {
   
   return (
     <>
-    <Business initialPage={initialPage} initialLimit={initialLimit} initialData={[]} />
+    <Business initialPage={initialPage} initialLimit={initialLimit} />
     </>
   )
 }
