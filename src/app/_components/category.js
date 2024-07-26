@@ -12,7 +12,7 @@ export default function Category() {
     const path = window.location.pathname;
     setActiveLink(path);
 
-    // Check if the filters container has overflow
+    
     const handleResize = () => {
       if (scrollRef.current) {
         const { scrollWidth, clientWidth } = scrollRef.current;

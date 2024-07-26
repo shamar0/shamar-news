@@ -7,7 +7,7 @@ import Loading from "../loading";
 import Link from "next/link";
 import '../../../public/style.css'
 
-export default function Health({ initialPage, initialLimit, initialData }) {
+export default function Health({ initialPage, initialLimit }) {
   const router = useRouter();
   const [page, setPage] = useState(initialPage);
   const [limit, setLimit] = useState(initialLimit);

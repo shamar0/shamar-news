@@ -6,7 +6,7 @@ import axios from "axios";
 import Loading from "../loading";
 import '../../../public/style.css'
 
-export default function Education({ initialPage, initialLimit, initialData }) {
+export default function Education({ initialPage, initialLimit}) {
   const router = useRouter();
   const [page, setPage] = useState(initialPage);
   const [limit, setLimit] = useState(initialLimit);

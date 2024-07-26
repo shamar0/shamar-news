@@ -93,7 +93,6 @@ export default function Products() {
           <h3 style={{color:"#ff3333", display:"flex", justifyContent:"center", alignItems:"center", marginTop:"10px" }}>No relevant data found.</h3>
         )}
       
-      
       <div className="btn-container">
         {page > 1 && (
           <div className="prev-btn nxpv-btn">

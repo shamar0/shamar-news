@@ -6,7 +6,7 @@ import axios from "axios";
 import Loading from "../loading";
 import '../../../public/style.css'
 
-export default function Trending({ initialPage, initialLimit, initialData }) {
+export default function Trending({ initialPage, initialLimit}) {
   const router = useRouter();
   const [page, setPage] = useState(initialPage);
   const [limit, setLimit] = useState(initialLimit);
@@ -42,6 +42,7 @@ export default function Trending({ initialPage, initialLimit, initialData }) {
     const offset = (page - 1) * limit;
     const paginatedData = categorisedData.slice(offset, offset + limit);
         setFilteredData(paginatedData);
+        console.log(filteredData)
   };
 
   const handleNavigation = (newPage) => {
