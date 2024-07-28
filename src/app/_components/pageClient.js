@@ -16,6 +16,7 @@ export default function PageClient({ initialPage, initialLimit }) {
 
   useEffect(() => {
     async function getData() {
+      
       setLoading(true);
       try {
         let res = await axios.get(`/api/news?page=${page}&limit=${limit}`);
