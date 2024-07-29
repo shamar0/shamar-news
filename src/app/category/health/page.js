@@ -6,7 +6,7 @@ export default function HealthPage({ searchParams }) {
   
   return (
     <>
-    <Health initialPage={initialPage} initialLimit={initialLimit}/>
+    <Health initialPage={initialPage} initialLimit={initialLimit} initialData={[]}/>
     </>
   )
 }
