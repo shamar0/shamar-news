@@ -28,10 +28,13 @@ export default function PageClient({ initialPage, initialLimit, initialData }) {
         setLoading(false);
       }
     }
-    if ( !initialData.length) {
+    // if ( !initialData.length) {
+    //   getData();
+    // }
+    if (page !== initialPage || limit !== initialLimit || !initialData.length) {
       getData();
     }
-  }, [initialData])
+  }, [initialData,page,limit])
 
   useEffect(() => {
     filterData(data);
