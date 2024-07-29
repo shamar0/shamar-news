@@ -31,7 +31,7 @@ export default function PageClient({ initialPage, initialLimit, initialData }) {
     if ( !initialData.length) {
       getData();
     }
-  }, [])
+  }, [initialData])
 
   useEffect(() => {
     filterData(data);
