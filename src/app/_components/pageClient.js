@@ -20,32 +20,52 @@ export default function PageClient({ initialPage, initialLimit, initialData }) {
       try {
         const res = await axios.get(`/api/news?page=${page}&limit=${limit}`);
         const data = res.data;
-        setData(data);
-        filterData(data);
+        const offset = (page - 1) * limit;
+        const paginatedData = data.slice(offset, offset + limit);
+        setData(paginatedData);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
         setLoading(false);
       }
     }
-    // if ( !initialData.length) {
-    //   getData();
-    // }
+
     if (page !== initialPage || limit !== initialLimit || !initialData.length) {
       getData();
     }
-  }, [initialData,page,limit])
-
-  useEffect(() => {
-    filterData(data);
-  }, [page, limit]);
+  }, [page, limit, initialPage, initialLimit, initialData]);
 
 
-  const filterData= (dataToFilter) => {
-        const offset = (page - 1) * limit;
-        const paginatedData = dataToFilter.slice(offset, offset + limit);
-        setFilteredData(paginatedData);
-  };
+  // useEffect(() => {
+  //   async function getData() {
+  //     setLoading(true);
+  //     try {
+  //       const res = await axios.get(`/api/news?page=${page}&limit=${limit}`);
+  //       const data = res.data;
+  //       setData(data);
+  //       filterData(data);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   }
+  //   if ( !initialData.length) {
+  //     getData();
+  //   }
+   
+  // }, [initialData])
+
+  // useEffect(() => {
+  //   filterData(data);
+  // }, [page, limit]);
+
+
+  // const filterData= (dataToFilter) => {
+  //       const offset = (page - 1) * limit;
+  //       const paginatedData = dataToFilter.slice(offset, offset + limit);
+  //       setFilteredData(paginatedData);
+  // };
 
   const handleNavigation = (newPage) => {
     setPage(newPage);
@@ -58,7 +78,7 @@ export default function PageClient({ initialPage, initialLimit, initialData }) {
 
   return (
     <div>
-      <Home data={filteredData} />
+      <Home data={data} />
       <div className="btn-container">
       {page > 1 && (
           <div className="prev-btn nxpv-btn">
