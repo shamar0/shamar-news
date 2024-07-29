@@ -6,7 +6,7 @@ export default function TrendingPage({ searchParams }) {
   
   return (
     <>
-    <Trending initialPage={initialPage} initialLimit={initialLimit}/>
+    <Trending initialPage={initialPage} initialLimit={initialLimit} initialData={[]}/>
     </>
   )
 }

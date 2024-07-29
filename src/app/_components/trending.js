@@ -6,11 +6,11 @@ import axios from "axios";
 import Loading from "../loading";
 import '../../../public/style.css'
 
-export default function Trending({ initialPage, initialLimit}) {
+export default function Trending({ initialPage, initialLimit,initialData}) {
   const router = useRouter();
   const [page, setPage] = useState(initialPage);
   const [limit, setLimit] = useState(initialLimit);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(initialData);
   const [loading, setLoading] = useState(true);
   const [filteredData, setFilteredData] = useState([]);
 
@@ -19,18 +19,20 @@ export default function Trending({ initialPage, initialLimit}) {
     async function getData() {
       setLoading(true);
       try {
-        let res = await axios.get(`/api/news?page=${page}&limit=${limit}`);
-        res = res.data;
-        setData(res);
-        filterData(res);
+        const res = await axios.get(`/api/news?page=${page}&limit=${limit}`);
+        const data = res.data;
+        setData(data);
+        filterData(data);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
         setLoading(false);
       }
     }
+    if ( !initialData.length) {
       getData();
-  }, []);
+    }
+  }, [])
 
   useEffect(() => {
     filterData(data);
