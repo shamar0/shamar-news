@@ -1,5 +1,6 @@
 import axios from "axios";
 
+export const dynamic = 'force-dynamic';
 export const GET = async (req, res) => {
   try {
     const response = await axios.get("http://newsinsummary-env.eba-t6yjac2w.ap-south-1.elasticbeanstalk.com/news");
