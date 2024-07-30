@@ -32,7 +32,7 @@ export default function Trending({ initialPage, initialLimit,initialData}) {
     if ( !initialData.length) {
       getData();
     }
-  }, [])
+  })
 
   useEffect(() => {
     filterData(data);

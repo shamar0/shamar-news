@@ -30,7 +30,7 @@ export default function Sports({ initialPage, initialLimit}) {
       }
     }
       getData();
-  }, []);
+  });
 
   useEffect(() => {
     filterData(data);

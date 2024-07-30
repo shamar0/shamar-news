@@ -30,7 +30,7 @@ export default function Politics({ initialPage, initialLimit }) {
       }
     }
       getData();
-  }, []);
+  });
 
   useEffect(() => {
     filterData(data);

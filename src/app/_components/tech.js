@@ -30,7 +30,7 @@ export default function Tech({ initialPage, initialLimit}) {
       }
     }
       getData();
-  }, []);
+  });
 
   useEffect(() => {
     filterData(data);

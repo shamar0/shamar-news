@@ -26,7 +26,7 @@ export default function Category() {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  });
   
   
   const handleClick = (path) => {

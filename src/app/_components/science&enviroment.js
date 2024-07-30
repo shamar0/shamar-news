@@ -30,7 +30,7 @@ export default function Science({ initialPage, initialLimit }) {
       }
     }
       getData();
-  }, []);
+  });
 
   useEffect(() => {
     filterData(data);
