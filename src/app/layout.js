@@ -1,7 +1,8 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import Footer from "./_components/footer";
-import "bootstrap/dist/css/bootstrap.min.css";
 import NavbarWrapper from "./_components/navbarWrapper";
+import Navbar from "./_components/navbar";
 
 export const metadata = {
   title: "shamar news",
