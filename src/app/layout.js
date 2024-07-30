@@ -2,7 +2,7 @@ import "./globals.css";
 import Navbar from "./_components/navbar";
 import Footer from "./_components/footer";
 import "bootstrap/dist/css/bootstrap.min.css";
-import NavbarWrapper from "./_components/navbarWrapper";
+// import NavbarWrapper from "./_components/navbarWrapper";
 
 export const metadata = {
   title: "shamar news",
@@ -14,7 +14,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-          <NavbarWrapper />
+          {/* <NavbarWrapper /> */}
+          <Navbar/>
         <div className="main-content">
           {children}
         </div>
