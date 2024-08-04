@@ -8,8 +8,6 @@ import Signup from "./signup";
 import '../../../public/navStyle.css'
 import Login from "./login";
 
-
-
 function Navbar() {
   const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState('');
@@ -136,7 +134,6 @@ function Navbar() {
            )}
         </div>
     </div>
-
            <Link className="nav-logo" href="/news">
             <i className="fa-brands fa-slack nav-logo-img">
               <span className="nav-logo-text"> shamar news</span>

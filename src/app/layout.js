@@ -17,8 +17,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
       <UserContextProvider>
-          {/* <NavbarWrapper /> */}
-          <Navbar/>
+          <NavbarWrapper />
+          {/* <Navbar/> */}
         <div className="main-content">
           {children}
         </div>
