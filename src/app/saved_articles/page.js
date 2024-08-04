@@ -11,6 +11,7 @@ const SavedArticles = () => {
   const [isLoginVisible, setLoginVisible] = useState(false);
   let [isSignupVisible, setSignupVisible] = useState(false);
 
+
   const { user } = useContext(UserContext);
 
   useEffect(() => {
