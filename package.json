@@ -11,8 +11,9 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.2",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
-    "axios": "^1.7.2",
+    "axios": "^1.7.3",
     "bootstrap": "^5.3.3",
+    "dotenv": "^16.4.5",
     "next": "14.2.4",
     "nextjs-toploader": "^1.6.12",
     "react": "^18",

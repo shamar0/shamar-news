@@ -26,7 +26,7 @@ export default function Home({ data }) {
     }
     try {
       const token = localStorage.getItem('token');
-      await axios.post(`${process.env.BACKEND_API}/users/save-article`, { articleId }, {
+      await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_API}/users/save-article`, { articleId }, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -48,7 +48,7 @@ export default function Home({ data }) {
     }
     try {
       const token = localStorage.getItem('token');
-      await axios.post(`${process.env.BACKEND_API}/users/remove-article`, { articleId }, {
+      await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_API}/users/remove-article`, { articleId }, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

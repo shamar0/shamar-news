@@ -177,7 +177,7 @@ function Navbar() {
         <div className="d-flex justify-content-end navbar-right-div-item">
           <Link href="/saved_articles" class="save-button">
             <i className="fa-solid fa-bookmark"></i>
-            <span className="text">Save</span>
+            <span className="text">Saved</span>
           </Link>
         </div>
       </div>

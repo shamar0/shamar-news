@@ -21,7 +21,7 @@ const SavedArticles = () => {
     
     const fetchSavedArticles = async () => {
       try {
-        const response = await axios.get(`${process.env.BACKEND_API}/users/saved-articles`, {
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API}/users/saved-articles`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
           },
