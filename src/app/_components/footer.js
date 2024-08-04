@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <div className="footer mt-5 bg-body-tertiary" >
       <div>
-        <h5><Link href="https://shamar-news-git-main-shamars-projects.vercel.app/" className="footer-text" style={{textDecoration:"none"}} >Developed by shamar</Link> </h5>
+        <h5><Link href="https://shamar-news-53j6.vercel.app" className="footer-text" style={{textDecoration:"none"}} >Developed by shamar</Link> </h5>
       </div>
 
       <div>

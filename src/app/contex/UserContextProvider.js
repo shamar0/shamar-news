@@ -16,7 +16,7 @@ const UserContextProvider = ({children}) =>{
       const token = localStorage.getItem('token');
       if (token) {
         try {
-          const response = await axios.get("http://newsinsummary-env.eba-t6yjac2w.ap-south-1.elasticbeanstalk.com/check-auth" , {
+          const response = await axios.get("http://newsinsummary-env.eba-t6yjac2w.ap-south-1.elasticbeanstalk.com/check-auth/" , {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -34,7 +34,7 @@ const UserContextProvider = ({children}) =>{
 
   const login = async (username, password) => {
     try {
-      const response = await axios.post("http://newsinsummary-env.eba-t6yjac2w.ap-south-1.elasticbeanstalk.com/login", { username, password });
+      const response = await axios.post("http://newsinsummary-env.eba-t6yjac2w.ap-south-1.elasticbeanstalk.com/login/", { username, password });
       localStorage.setItem('token', response.data.token);
       setUser(response.data.user);
       router.push('/news');
@@ -46,7 +46,7 @@ const UserContextProvider = ({children}) =>{
 
   const signup = async (username, password) => {
     try {
-      const response = await axios.post("http://newsinsummary-env.eba-t6yjac2w.ap-south-1.elasticbeanstalk.com/signup", { username, password });
+      const response = await axios.post("http://newsinsummary-env.eba-t6yjac2w.ap-south-1.elasticbeanstalk.com/signup/", { username, password });
       localStorage.setItem('token', response.data.token);
       setUser(response.data.user);
       router.push('/news'); 

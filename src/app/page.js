@@ -42,7 +42,7 @@ export default function Home() {
 
         </div>
         <div className="link-container">
-          <Link href="/news" className="link-home">
+          <Link href="https://shamar-news-53j6.vercel.app/news" className="link-home">
             <i className="fas fa-arrow-right arrow"></i> Click here to go
           </Link>
         </div>
