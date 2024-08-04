@@ -69,7 +69,7 @@ body {
 /* Hero Section CSS */
 .hero-section {
   position: relative;
-  background: linear-gradient(135deg, #f9ecec, #ffcccc, #ff9999, #ff6666, #ff3333);
+  background: linear-gradient(135deg, #f9ecec, #ffcccc, #ff9999, #ff8888, #ff7777);
   padding: 80px 40px;
   color: #555;
 }
@@ -201,5 +201,15 @@ ul li{
   }
   100% {
       transform: translateX(-10px) ;
+  }
+}
+
+@media (max-width: 550px){
+   .list-home li{
+    font-size: 15px !important;
+    color: black;
+  }
+  .paragraph-home{
+    font-size: 18px !important;
   }
 }
