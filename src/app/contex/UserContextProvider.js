@@ -7,7 +7,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 
 const UserContextProvider = ({children}) =>{
-  let errorMsg= "Click on the Lock Icon: Located to the left of the URL in the address bar. In the menu that appears, find the option for 'Site settings' or 'Permissions for this site' or 'more information' (as per browser). Find the 'Insecure content' setting and switch it to 'Allow'."
+  let errorMsg= "Click on the Lock Icon: Located to the left of the URL in the address bar.\nIn the menu that appears, find the option for 'Site settings' or 'Permissions for this site' or 'more information' (as per browser).\nInsecure Content: Find the 'Insecure content' setting and switch it to 'Allow'.\nRefresh: Reload your webpage."
   
    const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -42,7 +42,7 @@ const UserContextProvider = ({children}) =>{
       router.push('/news');
     } catch (error) {
       console.error('Login failed:', error);
-      alert('Login failed: ' + errorMsg);
+      alert('Login failed:\nTo resolve this issue do this-\n' + errorMsg);
     }
   };
 
@@ -54,7 +54,7 @@ const UserContextProvider = ({children}) =>{
       router.push('/news'); 
     } catch (error) {
       console.error('Signup failed:', error);
-      alert('Signup failed: ' + errorMsg);
+      alert('Signup failed:\nTo resolve this issue do this-\n' + errorMsg);
     }
   };
   
