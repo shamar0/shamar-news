@@ -31,11 +31,23 @@
   flex: 0 0 33.3333%;
   overflow: hidden;
 }
+.card-save-article{
+  border: none;
+  background-color:#fff;
+  color: #444d44 ;
+  position: absolute;
+  right: 11%;
+}
 
 @media (max-width: 768px) {
   .image-container {
     flex: 0 0 100%;
     overflow: hidden;
+  }
+}
+@media (max-width: 985px) {
+  .card-save-article{
+    right: 24%;
   }
 }
 
@@ -250,8 +262,6 @@
 .arrow-btn {
   display: none;
 }
-
-
 
 @media (max-width: 500px) {
   .filters {

@@ -3,7 +3,7 @@ import axios from "axios";
 export const dynamic = 'force-dynamic';
 export const GET = async (req, res) => {
   try {
-    const response = await axios.get("http://newsinsummary-env.eba-t6yjac2w.ap-south-1.elasticbeanstalk.com/news");
+    const response = await axios.get(`${process.env.BACKEND_API}/news`);
     const data = response.data;
 
     return new Response(JSON.stringify(data), {

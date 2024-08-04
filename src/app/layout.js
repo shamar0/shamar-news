@@ -3,6 +3,8 @@ import "./globals.css";
 import Footer from "./_components/footer";
 import NavbarWrapper from "./_components/navbarWrapper";
 import Navbar from "./_components/navbar";
+import UserContextProvider from "./contex/UserContextProvider";
+;
 
 export const metadata = {
   title: "shamar news",
@@ -14,11 +16,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-          <NavbarWrapper />
+      <UserContextProvider>
+          {/* <NavbarWrapper /> */}
+          <Navbar/>
         <div className="main-content">
           {children}
         </div>
         <Footer />
+       </UserContextProvider>
       </body>
     </html>
   );
