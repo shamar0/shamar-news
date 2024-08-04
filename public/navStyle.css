@@ -3,7 +3,6 @@
     top: 0;
     height: 5.2rem;
     padding: 10px 20px;    
-    box-shadow: 0 4px 4px #ff999939 !important;
     border-bottom:0.5px solid #ff5555 !important;
     background-color: rgb(255,255,255) !important;
     z-index: 1000;
@@ -268,7 +267,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ff3333; /* Dark background color */
+    background-color: #ff4444; /* Dark background color */
     color: white; /* White text color */
     border: none;
     padding: 10px 20px;
@@ -278,7 +277,7 @@
   }
 
   .save-button:hover {
-    background-color: #ff5555; /* Slightly lighter color on hover */
+    background-color: #ff6666; /* Slightly lighter color on hover */
     text-decoration: none;
   }
 
