@@ -34,8 +34,6 @@ export default function Home() {
           <li><strong>Live News Updates:</strong> The website gathers real-time news from several reputable sources, ensuring that users always have access to the latest information.</li>
           <li><strong>Smooth Navigation:</strong> The site is designed to handle large amounts of news efficiently, allowing users to browse through articles easily with features like pagination.</li>
           <li><strong>Modern and Responsive Design:</strong> Built with the latest web technologies, the website offers a sleek and modern look that works well on both desktop and mobile devices.</li>
-          <li><strong>User Login and Signup:</strong> Provides user authentication features, allowing users to create accounts, log in, and access personalized features.</li>
-          <li><strong>Article Saving:</strong> Logged-in users can save specific articles for future reference, enhancing the user experience and convenience.</li>
           <li><strong>Share Button:</strong>  Each news article includes a share button, enabling users to easily share content across social media platforms.</li>
           <li><strong>Voice Assistant Integration(using chrome extension):</strong>Made a chrome extension by using it users can navigate the website using voice commands such as "next page or go to next page", "previous page", "refresh", "scroll down", and "scroll up", making it more accessible and interactive.</li>          
         </ul>
@@ -43,6 +41,7 @@ export default function Home() {
         </div>
         <div className="link-container">
           <Link href="https://shamar-news-53j6.vercel.app/news" className="link-home">
+          {/* <Link href="/news" className="link-home"> */}
             <i className="fas fa-arrow-right arrow"></i> Click here to go
           </Link>
         </div>
