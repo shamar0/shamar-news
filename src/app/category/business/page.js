@@ -1,4 +1,4 @@
-import Business from "@/app/_components/business";
+import CategoryPage from "@/app/_components/CategoryPage";
 
 export default function StartupPage({ searchParams }) {
   const initialPage = parseInt(searchParams.page) || 1;
@@ -6,7 +6,7 @@ export default function StartupPage({ searchParams }) {
   
   return (
     <>
-    <Business initialPage={initialPage} initialLimit={initialLimit}/>
+    <CategoryPage category={"Business"} initialPage={initialPage} initialLimit={initialLimit}/>
     </>
   )
 }

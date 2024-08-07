@@ -1,4 +1,4 @@
-import Tech from "@/app/_components/tech";
+import CategoryPage from "@/app/_components/CategoryPage";
 
 export default function TechPage({ searchParams }) {
   const initialPage = parseInt(searchParams.page) || 1;
@@ -6,7 +6,7 @@ export default function TechPage({ searchParams }) {
   
   return (
     <>
-    <Tech initialPage={initialPage} initialLimit={initialLimit}/>
+    <CategoryPage category={"Tech"} initialPage={initialPage} initialLimit={initialLimit}/>
     </>
   )
 }

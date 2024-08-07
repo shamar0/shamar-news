@@ -26,17 +26,14 @@ export default function Category() {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  });
-  
+  }); 
   
   const handleClick = (path) => {
     setActiveLink(path);
   };
   
-  
   return (
     <div className="filters-wrapper">
-
       <div className="filters" ref={scrollRef}>
         <div className={`ind-filter ${activeLink === '/news' ? 'active' : ''}`}>
           <Link className='category-text' href="/news" onClick={() => handleClick('/news')}>

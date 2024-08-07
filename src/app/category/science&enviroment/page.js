@@ -1,4 +1,4 @@
-import Science from "@/app/_components/science&enviroment";
+import CategoryPage from "@/app/_components/CategoryPage";
 
 export default function SciencePage({ searchParams }) {
   const initialPage = parseInt(searchParams.page) || 1;
@@ -6,7 +6,7 @@ export default function SciencePage({ searchParams }) {
   
   return (
     <>
-    <Science initialPage={initialPage} initialLimit={initialLimit}/>
+    <CategoryPage category={"Science&Enviroment"} initialPage={initialPage} initialLimit={initialLimit}/>
     </>
   )
 }

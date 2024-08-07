@@ -1,4 +1,4 @@
-import Education from "@/app/_components/education";
+import CategoryPage from "@/app/_components/CategoryPage";
 
 export default function EducationPage({ searchParams }) {
   const initialPage = parseInt(searchParams.page) || 1;
@@ -6,7 +6,7 @@ export default function EducationPage({ searchParams }) {
   
   return (
     <>
-    <Education initialPage={initialPage} initialLimit={initialLimit}/>
+    <CategoryPage category={"Education"} initialPage={initialPage} initialLimit={initialLimit}/>
     </>
   )
 }

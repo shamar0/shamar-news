@@ -38,9 +38,9 @@ export default function PageClient({ initialPage, initialLimit }) {
 
 
   const filterData= (dataToFilter) => {
-        const offset = (page - 1) * limit;
-        const paginatedData = dataToFilter.slice(offset, offset + limit);
-        setFilteredData(paginatedData);
+            const offset = (page - 1) * limit;
+            const paginatedData = dataToFilter.slice(offset, offset + limit);
+            setFilteredData(paginatedData);          
   };
 
   const handleNavigation = (newPage) => {

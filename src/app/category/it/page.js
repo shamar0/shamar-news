@@ -1,4 +1,4 @@
-import IT from "@/app/_components/it";
+import CategoryPage from "@/app/_components/CategoryPage";
 
 export default function SportsPage({ searchParams }) {
   const initialPage = parseInt(searchParams.page) || 1;
@@ -6,7 +6,7 @@ export default function SportsPage({ searchParams }) {
   
   return (
     <>
-    <IT initialPage={initialPage} initialLimit={initialLimit}/>
+    <CategoryPage category={"IT"} initialPage={initialPage} initialLimit={initialLimit}/>
     </>
   )
 }

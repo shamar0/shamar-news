@@ -1,4 +1,4 @@
-import Sports from "@/app/_components/sports";
+import CategoryPage from "@/app/_components/CategoryPage";
 
 export default function TrendingPage({ searchParams }) {
   const initialPage = parseInt(searchParams.page) || 1;
@@ -6,7 +6,7 @@ export default function TrendingPage({ searchParams }) {
   
   return (
     <>
-    <Sports initialPage={initialPage} initialLimit={initialLimit}/>
+    <CategoryPage category={"Sports"} initialPage={initialPage} initialLimit={initialLimit}/>
     </>
   )
 }

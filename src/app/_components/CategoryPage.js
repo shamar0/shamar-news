@@ -6,7 +6,7 @@ import axios from "axios";
 import Loading from "../loading";
 import '../../../public/style.css'
 
-export default function Health({ initialPage, initialLimit }) {
+export default function CategoryPage({category, initialPage, initialLimit}) {
   const router = useRouter();
   const [page, setPage] = useState(initialPage);
   const [limit, setLimit] = useState(initialLimit);
@@ -38,7 +38,7 @@ export default function Health({ initialPage, initialLimit }) {
 
 
   const filterData= (dataToFilter) => {
-    const categorisedData = dataToFilter.filter(item => item.category == "Health");
+    const categorisedData = dataToFilter.filter(item => item.category == category);
     const offset = (page - 1) * limit;
     const paginatedData = categorisedData.slice(offset, offset + limit);
         setFilteredData(paginatedData);
@@ -46,7 +46,7 @@ export default function Health({ initialPage, initialLimit }) {
 
   const handleNavigation = (newPage) => {
     setPage(newPage);
-    router.push(`/category/health?page=${newPage}&limit=${limit}`, undefined, { shallow: true });
+    router.push(`/category/${category.toLowerCase()}?page=${newPage}&limit=${limit}`, undefined, { shallow: true });
   };
 
   if (loading) {

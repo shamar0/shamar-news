@@ -1,4 +1,4 @@
-import Entertainment from "@/app/_components/entertainment";
+import CategoryPage from "@/app/_components/CategoryPage";
 
 export default function EntertainmentPage({ searchParams }) {
   const initialPage = parseInt(searchParams.page) || 1;
@@ -6,7 +6,7 @@ export default function EntertainmentPage({ searchParams }) {
   
   return (
     <>
-    <Entertainment initialPage={initialPage} initialLimit={initialLimit}/>
+    <CategoryPage category={"Entertainment"} initialPage={initialPage} initialLimit={initialLimit}/>
     </>
   )
 }
