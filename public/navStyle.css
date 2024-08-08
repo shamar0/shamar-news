@@ -3,8 +3,9 @@
     top: 0;
     height: 5.2rem;
     padding: 10px 20px;    
-    border-bottom:0.5px solid #ff5555 !important;
-    background-color: rgb(255,255,255) !important;
+    border-bottom:0.3px solid var(--border-classic) !important;
+    box-shadow: 0 4px 7px #e2884350;
+    background-color: var(--background-off-white) !important;
     z-index: 1000;
   }
 
@@ -14,7 +15,7 @@
     justify-content: space-around !important;
   }
   .nav-logo{
-    color: #ff3333;
+    color: var(--primary-navy);
     font-size: 30px;
   }
   .nav-logo-text{
@@ -22,22 +23,22 @@
     font-family: 'Monoton' !important;
   }
   .fa-magnifying-glass{
-    color: #555;
+    /* color: #555; */
+    color: #fff;
   }
   .nav-btn{
     width: 50px !important;
     border: none !important;
     font-size: medium !important;
-    background-color: #ff6666 !important;
+    background-color: var(--accent-orange);
     border-radius: 0px !important;
     border-top-right-radius: 6.8px !important;
     border-bottom-right-radius: 6.8px !important;
   }
   
 .navbar-search{
-    border: 1.5px solid #555 !important;
+    border: 1.5px solid var(--primary-navy) !important;
     border-radius: 8.2px;
-    /* flex-grow: 1; */
     width: 46% !important;
 }
 .form-control{
@@ -52,9 +53,10 @@
 }
 
 .navbar-search:focus-within {
-  box-shadow: 0 0 1px 1px #ff9999;
-  border: 1px solid #ff3333 !important;
+  box-shadow: 0 0 1px 1px var(--accent-orange);
+  border: 1px solid var(--accent-orange) !important;
 }
+
 
 @media (max-width:750px) {    
     .navbar {
@@ -69,8 +71,7 @@
         margin-left: 0 !important;
     }
     .nav-logo{
-        color: #ff3333;
-        font-size: 22px;
+        font-size: 24px;
       }
 }
 

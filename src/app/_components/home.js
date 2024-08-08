@@ -49,7 +49,7 @@ export default function Home({ data }) {
                       <span className="card-text" style={{color: '#44444D',fontSize:"16px",lineHeight:"22px",marginTop:"8px",fontWeight:"300"}}>{data[i].content}</span>
                       <br />
                       <Link className="card-text read-more" href={data[i].read_more} target="_blank" rel="noopener noreferrer">Read More</Link>
-                      <button style={{position:"absolute",right:"2.5%"}} className='card-save-article'  onClick={() => handleShare(data[i].title,data[i].read_more)}><i className="fa-solid fa-share-nodes"></i> Share</button>
+                      <button style={{position:"absolute",right:"2.5%"}} className='card-save-article read-more'  onClick={() => handleShare(data[i].title,data[i].read_more)}><i className="fa-solid fa-share-nodes"></i> Share</button>
                     </p>
                   </div>
                 </div>

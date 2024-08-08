@@ -36,7 +36,8 @@ function Navbar() {
 
 
   return (
-    <nav className="navbar" style={{ backgroundColor: "#ECEBEB" }}>
+    <nav className="navbar" >
+    {/* <nav className="navbar" style={{ backgroundColor: "#ECEBEB" }}> */}
       <div className="navbar-content container-fluid p-0">
         {/* <div className="navbar-left-div" > */}
           {/* <div className="navbar-item navbar-left-div-item"> */}
