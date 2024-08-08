@@ -32,7 +32,6 @@ export default function Home({ data }) {
   const dataElements = [];
   for (let i = 0; i <data.length; i++) {
     dataElements.push(
-          
           <div key={data[i].id} className="container card-container mt-5" >
             <div className="card" >
               <div className="row g-0 w-100 iic">
