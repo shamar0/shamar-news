@@ -33,8 +33,6 @@ body {
   background-color: var(--background-off-white) !important;
   color: var(--text-dark);
   font-family: 'Roboto', sans-serif;
-  /* background-color: whitesmoke !important; */
-  /* background-color: #f0f0f0; */
 }
 
 .main-content {
@@ -90,9 +88,11 @@ body {
 /* Hero Section CSS */
 .hero-section {
   position: relative;
-  background: linear-gradient(135deg, #f9ecec, #ffcccc, #ff9999, #ff8888, #ff7777);
+  background-color:  var(--background-off-white);
   padding: 80px 40px;
-  color: #555;
+  background: linear-gradient(135deg, #cce0f5, #99b3cc);
+
+
 }
 
 .hero-content {
@@ -108,7 +108,7 @@ body {
 .hero-buttons a {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #ff3333;
+  background-color: var(--primary-navy);
   color: #fff;
   border-radius: 5px;
   text-decoration: none;
@@ -116,7 +116,7 @@ body {
 }
 
 .hero-buttons a:hover {
-  background-color: #cc0000;
+  background-color: var(--primary-navy-transparent);
 }
 
 .hero-icons {
@@ -126,12 +126,12 @@ body {
 .hero-icons i {
   display: inline-block;
   margin: 0 0.6rem;
-  color: #555;
+  color: var(--primary-navy);
   font-size: 2em;
 }
 
 .hero-icons i:hover {
-  color: #ff3333;
+  color: var(--primary-navy-transparent);
 }
 
 .profile-image-hero {
@@ -145,7 +145,9 @@ body {
 }
 
 .profile-section{
-  margin-top: 8rem;
+  margin-top: 70px;
+  background: linear-gradient(135deg, #cce0f5, #99b3cc, #6686b3);
+  padding-top: 50px;
 }
 
 .paragraph-home{
@@ -167,7 +169,6 @@ ul li{
   }
 
   .hero-content {
-    /* margin-top: 8rem; */
     padding: 0 20px;
   }
 
@@ -198,7 +199,7 @@ ul li{
   width: 100%;
   height: 5rem;
   padding: 10px 20px;
-  background: linear-gradient(135deg, #f9ecec, #ffcccc, #ff9999, #ff6666, #ff3333);
+  background: linear-gradient(135deg, #cce0f5, #99b3cc, #6686b3);
   border-radius: 4px;
   transition: background-color 0.3s;
 }
@@ -232,5 +233,9 @@ ul li{
   }
   .paragraph-home{
     font-size: 18px !important;
+  }
+  .profile-section{
+    margin-top: 30px;
+    padding-top: 8px;
   }
 }
