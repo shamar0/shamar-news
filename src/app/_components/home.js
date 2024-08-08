@@ -1,10 +1,8 @@
 "use client";
-import axios from "axios";
 import Link from 'next/link';
 import '../../../public/style.css'
 import Category from './category';
 import Image from 'next/image';
-import { useEffect, useState } from "react";
 
 export default function Home({ data }) {
   

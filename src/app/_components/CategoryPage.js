@@ -56,7 +56,6 @@ export default function CategoryPage({category, initialPage, initialLimit}) {
   return (
     <div>
       <Home data={filteredData} />
-      <br /> <br />
       <div className="btn-container">
       {page > 1 && (
           <div className="prev-btn nxpv-btn">

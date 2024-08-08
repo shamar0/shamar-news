@@ -11,7 +11,7 @@ export default function Home() {
           <h1>Hey! I Am Mohammad Shamar</h1>
           <p>Ambitious Software Developer with excellent frontend and backend development skills.</p>
           <div className="hero-buttons">
-            <Link href="https://drive.google.com/file/d/14U3ywfhnmcNWI-akd9J_KKT8WALrSQu8/view">
+            <Link href="https://drive.google.com/file/d/1YsZ4D1-yaq-xjzK7HqXaBDYDuqk0gK7v/view">
               Resume
             </Link>
           </div>
