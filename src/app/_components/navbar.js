@@ -37,10 +37,7 @@ function Navbar() {
 
   return (
     <nav className="navbar" >
-    {/* <nav className="navbar" style={{ backgroundColor: "#ECEBEB" }}> */}
       <div className="navbar-content container-fluid p-0">
-        {/* <div className="navbar-left-div" > */}
-          {/* <div className="navbar-item navbar-left-div-item"> */}
           <div className="navbar-item ">
             <Link className="nav-logo" href="/news">
               <i className="fa-brands fa-slack nav-logo-img">
@@ -63,7 +60,6 @@ function Navbar() {
               </button>
             </form>
           </div>
-        {/* </div> */}
       </div>
     </nav>
   );
