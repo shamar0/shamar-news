@@ -1,4 +1,4 @@
-import CategoryPage from "../../../app/_components/categoryPage";
+import CategoryPage from "@app/_components/CategoryPage";
 
 export default function Category({ params, searchParams }) {
   const { category } = params;
