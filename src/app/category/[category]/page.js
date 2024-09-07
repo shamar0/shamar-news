@@ -1,4 +1,4 @@
-import CategoryPage from "@/app/_components/categoryPage";
+import {CategoryPage} from "@/app/_components/categoryPage";
 
 export default function DynamicCategoryPage({ params, searchParams }) {
   const { category } = params;
