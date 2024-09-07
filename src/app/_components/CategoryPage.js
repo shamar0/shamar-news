@@ -13,6 +13,7 @@ export default function CategoryPage({category, initialPage, initialLimit}) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filteredData, setFilteredData] = useState([]);
+  category = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
 
 
   useEffect(() => {

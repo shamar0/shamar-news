@@ -32,8 +32,8 @@
     font-size: medium !important;
     background-color: var(--accent-orange);
     border-radius: 0px !important;
-    border-top-right-radius: 6.8px !important;
-    border-bottom-right-radius: 6.8px !important;
+    border-top-right-radius: 4.5px !important;
+    border-bottom-right-radius: 4.5px !important;
   }
   
 .navbar-search{
