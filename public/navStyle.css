@@ -38,7 +38,7 @@
   
 .navbar-search{
     border: 1.5px solid var(--primary-navy) !important;
-    border-radius: 8.2px;
+    border-radius: 5.5px;
     width: 46% !important;
 }
 .form-control{
@@ -64,7 +64,7 @@
         padding: 0px 0px;
     }
     .navbar-search{
-        width: 90% !important;
+        width: 99% !important;
     }
     .navbar-content{
         margin-right: 0 !important;

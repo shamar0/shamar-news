@@ -10,7 +10,7 @@ export default function Home({ data }) {
   const handleShare = async (title,read_more) => {
     if (navigator.share) {
       try {
-        await navigator.share({
+        await navigator.share({ 
           title: title,
           url: read_more, 
         });

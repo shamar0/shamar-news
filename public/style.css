@@ -99,14 +99,15 @@
   }
 
   .card {
-    width: 90%;
-    padding: 0.5rem;
+    width: 100%;
+    padding: 0.15rem;
     align-items: center;
   }
 
   .image-container {
     border-top-left-radius: 5px !important;
     border-top-right-radius: 5px !important;
+    height: 150px !important;
   }
 
   .card-title {
@@ -115,6 +116,7 @@
 
   .card-container {
     margin-top: 10px !important;
+    padding: 2px;
   }
 
   .nxpv-btn {
@@ -129,10 +131,12 @@
   .btn-container {
     margin-top: 7px !important;
   }
-
   .footer {
     height: 3rem !important;
     margin-top: 13px !important;
+  }
+  .filters {
+    margin: 16px 2px 0 2px !important;
   }
 }
 
@@ -282,7 +286,5 @@
 }
 
 @media (max-width: 500px) {
-  .filters {
-    margin: 16px 16px 0 16px;
-  }
+  
 }
