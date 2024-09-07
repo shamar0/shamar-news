@@ -1,6 +1,6 @@
-import CategoryPage from "../../_components/categoryPage";
+import CategoryPage from "../../../app/_components/categoryPage";
 
-export default function DynamicCategoryPage({ params, searchParams }) {
+export default function Category({ params, searchParams }) {
   const { category } = params;
   const initialPage = parseInt(searchParams.page) || 1;
   const initialLimit = parseInt(searchParams.limit) || 10;
