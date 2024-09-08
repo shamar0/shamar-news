@@ -95,7 +95,7 @@ export default function Category() {
           </Link>
         </div>
 
-        <div className={`ind-filter ${activeLink === '/category/science&enviroment' ? 'active' : ''}`}>
+        <div className={`ind-filter ${activeLink === '/category/science%26enviroment' ? 'active' : ''}`}>
           <Link className='category-text' href="/category/science&enviroment" onClick={() => handleClick('/category/science&enviroment')}>
             <span>Science/Enviroment</span>
           </Link>

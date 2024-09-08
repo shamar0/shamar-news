@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import Loading from "../loading";
 import '../../../public/style.css'
+import Category from "./category";
 
 export default function CategoryPage({category, initialPage, initialLimit}) {
   const router = useRouter();
@@ -13,7 +14,7 @@ export default function CategoryPage({category, initialPage, initialLimit}) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filteredData, setFilteredData] = useState([]);
-  category = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
+  
 
 
   useEffect(() => {
@@ -35,11 +36,15 @@ export default function CategoryPage({category, initialPage, initialLimit}) {
 
   useEffect(() => {
     filterData(data);
+    console.log(filteredData.length);
   }, [page, limit]);
 
 
   const filterData= (dataToFilter) => {
-    const categorisedData = dataToFilter.filter(item => item.category == category);
+    let formattedCategory='';
+    if(category=='science%26enviroment') formattedCategory = category.replace('science%26enviroment', 'Science&Environment');
+     else formattedCategory = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
+    const categorisedData = dataToFilter.filter(item => item.category == formattedCategory);
     const offset = (page - 1) * limit;
     const paginatedData = categorisedData.slice(offset, offset + limit);
         setFilteredData(paginatedData);
@@ -56,6 +61,8 @@ export default function CategoryPage({category, initialPage, initialLimit}) {
 
   return (
     <div>
+      { filteredData.length>0 ? (
+        <>
       <Home data={filteredData} />
       <div className="btn-container">
       {page > 1 && (
@@ -77,6 +84,23 @@ export default function CategoryPage({category, initialPage, initialLimit}) {
       </button>
       </div>
       </div>
+      </>
+      ) : (
+        <>
+         <Category/>
+        <h3 style={{color:"#F7941F", display:"flex", justifyContent:"center", alignItems:"center", marginTop:"10px" }}>No more data found!!!</h3>
+        <div className="btn-container">
+        <div className="next-btn nxpv-btn">
+      <button
+        className="btn"
+        onClick={() => handleNavigation(page - 1)}
+      >
+         <i className="fa-solid fa-arrow-left"></i> Pre
+      </button>
+      </div>
+      </div>
+        </>
+      )}
     </div>
   );
 }

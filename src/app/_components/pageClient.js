@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import Loading from "../loading";
 import '../../../public/style.css'
+import Category from "./category";
 
 export default function PageClient({ initialPage, initialLimit }) {
   const router = useRouter();
@@ -55,6 +56,8 @@ export default function PageClient({ initialPage, initialLimit }) {
 
   return (
     <div>
+      { filteredData.length>0 ? (
+        <>
       <Home data={filteredData} />
       <div className="btn-container">
       {page > 1 && (
@@ -76,6 +79,23 @@ export default function PageClient({ initialPage, initialLimit }) {
       </button>
       </div>
       </div>
+      </>
+       ) : (
+        <>
+        <Category/>
+        <h3 style={{color:"#F7941F", display:"flex", justifyContent:"center", alignItems:"center", marginTop:"10px" }}>No more data found!!!</h3>
+        <div className="btn-container">
+        <div className="next-btn nxpv-btn">
+      <button
+        className="btn"
+        onClick={() => handleNavigation(page - 1)}
+      >
+         <i className="fa-solid fa-arrow-left"></i> Pre
+      </button>
+      </div>
+      </div>
+        </>
+      )}
     </div>
   );
 }
