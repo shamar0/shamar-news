@@ -1,4 +1,4 @@
-import PageClient from "../_components/pageClient";
+import PageClient from "../_components/PageClient";
 
 export default async function NewsPage({ searchParams }) {
   const initialPage = parseInt(searchParams.page) || 1;
