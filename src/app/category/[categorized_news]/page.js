@@ -1,4 +1,4 @@
-import CategoryPage from "@/app/_components/categoryPage";
+import CategoryPage from "../../_components/categoryPage.js";
 
 export default function CategorizedNews({ params, searchParams }) {
   const { categorized_news } = params;
