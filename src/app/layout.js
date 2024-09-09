@@ -1,8 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
-import NavbarWrapper from "./_components/NavbarWrapper";
-import FooterWrapper from "./_components/FooterWrapper";
-import ScrollToTopButton from "./_components/ScrollToToButton";
+import NavbarWrapper from "./_components/navbarWrapper";
+import FooterWrapper from "./_components/footerWrapper";
+import ScrollToTopButton from "./_components/scrollToToButton";
 
 
 export const metadata = {

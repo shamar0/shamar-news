@@ -1,7 +1,7 @@
 "use client";
 import Link from 'next/link';
 import '../../../public/style.css'
-import Category from './Category';
+import Category from './category';
 import Image from 'next/image';
 
 export default function Home({ data }) {

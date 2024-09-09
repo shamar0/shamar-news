@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import axios from "axios";
 import '../../../public/style.css';
-import Home from '../_components/Home';
+import Home from '../_components/home';
 import Loading from '../loading';
 
 export default function Products() {

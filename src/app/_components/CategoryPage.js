@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from "react";
-import Home from "./Home";
+import Home from "./home";
 import axios from "axios";
 import Loading from "../loading";
 import '../../../public/style.css'
