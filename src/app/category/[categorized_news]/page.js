@@ -1,6 +1,6 @@
 import CategoryPage from "../../_components/categoryPage";
 
-export default function Category({ params, searchParams }) {
+export default function CategorizedNews({ params, searchParams }) {
   const { categorized_news } = params;
   const initialPage = parseInt(searchParams.page) || 1;
   const initialLimit = parseInt(searchParams.limit) || 10;
