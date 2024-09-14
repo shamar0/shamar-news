@@ -95,6 +95,12 @@ export default function Category() {
           </Link>
         </div>
 
+        <div className={`ind-filter ${activeLink === '/category/ev' ? 'active' : ''}`}>
+          <Link className='category-text' href="/category/ev" onClick={() => handleClick('/category/ev')}>
+            <span> EV</span>
+          </Link>
+        </div>
+
         <div className={`ind-filter ${activeLink === '/category/science&enviroment' ? 'active' : ''}`}>
           <Link className='category-text' href="/category/science&enviroment" onClick={() => handleClick('/category/science&enviroment')}>
             <span>Science/Enviroment</span>

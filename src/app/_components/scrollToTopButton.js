@@ -20,7 +20,7 @@ export default function ScrollToTopButton() {
     const scrollToTop = () => {
         const handleScrollToTop = () => {
             if (window.scrollY === 0) {
-                setIsHovered(false); // Set isHovered to false when the user reaches the top
+                setIsHovered(false); 
                 window.removeEventListener('scroll', handleScrollToTop);
             }
         };
@@ -38,7 +38,7 @@ export default function ScrollToTopButton() {
         borderRadius: "100%",
         height: isHovered? "50px" : "40px",
         width: isHovered? "50px" : "40px",
-        backgroundColor: "#9dbca7",
+        backgroundColor: "#F7941F",
         transition: 'height 0.1s ease-in-out, width 0.1s ease-in-out',
     }
 
@@ -49,7 +49,7 @@ export default function ScrollToTopButton() {
         height: "50px",
         width: "50px",
         zIndex: 100,
-        border: "1px solid #9dbca7",
+        border: "1px solid #F7941F",
         borderRadius: "50%",
         display: "flex",
         justifyContent:"center",
@@ -66,7 +66,7 @@ export default function ScrollToTopButton() {
                         onMouseLeave={() => setIsHovered(false)}
                         className="scroll-to-top-btn"
                         style={buttonStyle} >
-                        <i class="fa-solid fa-angle-up" style={{ color: "#003366" }}></i>
+                        <i class="fa-solid fa-angle-up" style={{ color: "#fff" }}></i>
                     </button>
                 </div>
             )}

@@ -17,7 +17,7 @@ export default function PageClient({ initialPage, initialLimit }) {
     async function getData() {
       setLoading(true);
       try {
-        const res = await axios.get(`/api/news?page=${page}&limit=${limit}`);
+        const res = await axios.get(`/api/news`);
         const data = res.data;
         setData(data);
         filterData(data);
@@ -44,7 +44,7 @@ export default function PageClient({ initialPage, initialLimit }) {
             } else {
               setFilteredData(prevData => [...prevData, ...paginatedData]);
             }
-            setNoMoreData(paginatedData.length == 0);          
+            setNoMoreData(paginatedData.length < 10);          
   };
 
   const handleNavigation = (newPage) => {

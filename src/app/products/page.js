@@ -75,7 +75,7 @@ export default function Products() {
       } else {
         setFilteredData(prevData => [...prevData, ...paginatedData]);
       }
-      setNoMoreData(paginatedData.length == 0);  
+      setNoMoreData(paginatedData.length < 10);  
     } else {
       setFilteredData([]);
     }
@@ -108,52 +108,13 @@ export default function Products() {
               </div>
             </div>
       ) : (
-        <h3 style={{color:"#F7941F", display:"flex", justifyContent:"center", alignItems:"center", marginTop:"10px" }}>No more data found!!!!!!</h3>
+        <h4 style={{color:"#F7941F", display:"flex", justifyContent:"center", alignItems:"center", marginTop:"10px" }}>No more data found!!!!!!</h4>
       )}
        </>
 
     ):(
-      <h3 style={{color:"#F7941F", display:"flex", justifyContent:"center", alignItems:"center", marginTop:"10px" }}>No more data found!!!</h3>
+      <h4 style={{color:"#F7941F", display:"flex", justifyContent:"center", alignItems:"center", marginTop:"40px" }}>Oops! No data found. Try to search another topic</h4>
     )}
     </div>
   );
-
 }
-
-
-
-
-//   return (
-//     <div>
-//         {filteredProducts.length > 0 ? (
-//       <Home data={filteredProducts}/>
-//         ) : (
-//           <h3 style={{color:"#ff3333", display:"flex", justifyContent:"center", alignItems:"center", marginTop:"10px" }}>No relevant data found.</h3>
-//         )}
-      
-//       <div className="btn-container">
-//         {page > 1 && (
-//           <div className="prev-btn nxpv-btn">
-//             <button
-//               className="btn"
-//               onClick={() => handleNavigation(page - 1)}
-//             >
-//               <i className="fa-solid fa-arrow-left"></i> Prev
-//             </button>
-//           </div>
-//         )}
-        
-//         {filteredProducts.length > 0 && (
-//         <div className="next-btn nxpv-btn">
-//           <button
-//             className="btn"
-//             onClick={() => handleNavigation(page + 1)}
-//           >
-//             Next <i className="fa-solid fa-arrow-right"></i>
-//           </button>
-//         </div>
-//       )}
-//       </div>
-//     </div>
-//   );
-// }

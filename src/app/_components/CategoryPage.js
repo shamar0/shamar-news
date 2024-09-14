@@ -17,7 +17,7 @@ export default function CategoryPage({category, initialPage, initialLimit}) {
     async function getData() {
       setLoading(true);
       try {
-        let res = await axios.get(`/api/news?page=${page}&limit=${limit}`);
+        let res = await axios.get(`/api/news`);
         res = res.data;
         console.log("RESPONSE",res.length);
         setData(res);
@@ -52,7 +52,7 @@ export default function CategoryPage({category, initialPage, initialLimit}) {
     } else {
       setFilteredData(prevData => [...prevData, ...paginatedData]);
     }
-        setNoMoreData(paginatedData.length == 0);
+        setNoMoreData(paginatedData.length < 10);
   };
 
   const handleNavigation = (newPage) => {
@@ -80,12 +80,12 @@ export default function CategoryPage({category, initialPage, initialLimit}) {
               </div>
             </div>
       ) : (
-        <h3 style={{color:"#F7941F", display:"flex", justifyContent:"center", alignItems:"center", marginTop:"10px" }}>No more data found!!!!!!</h3>
+        <h4 style={{color:"#F7941F", display:"flex", justifyContent:"center", alignItems:"center", marginTop:"10px" }}>No more data found!!!!!!</h4>
       )}
        </>
 
     ):(
-      <h3 style={{color:"#F7941F", display:"flex", justifyContent:"center", alignItems:"center", marginTop:"10px" }}>No more data found!!!</h3>
+      <h4 style={{color:"#F7941F", display:"flex", justifyContent:"center", alignItems:"center", marginTop:"10px" }}>No more data found!!!</h4>
     )}
     </div>
   );
