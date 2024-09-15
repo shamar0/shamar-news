@@ -75,7 +75,7 @@ export default function Products() {
       } else {
         setFilteredData(prevData => [...prevData, ...paginatedData]);
       }
-      setNoMoreData(paginatedData.length < 10);  
+      setNoMoreData(paginatedData.length < limit);  
     } else {
       setFilteredData([]);
     }
