@@ -7,7 +7,7 @@
       {
         "js": ["scripts/content.js"],
         "css":["scripts/content.css"],
-        "matches": ["https://next-news-app-peach.vercel.app/*",
+        "matches": ["http://localhost:3000/news",
                    "https://shamar-news-git-main-shamars-projects.vercel.app/*"
                    ]
       }

@@ -37,11 +37,11 @@ let isListening = JSON.parse(localStorage.getItem('isListening')) || false;
 // Define arrays for different commands
 const startKeywords = ["hey start", "start", "restart", "begin", "activate"];
 const stopKeywords = ["stop", "pause", "deactivate"];
-const nextKeywords = ["next page", "next", "forward"];
+const loadKeywords = ["load more", "load", "more", "next", "forward"];
 const previousKeywords = ["previous page", "previous", "back"];
 const refreshKeywords = ["refresh", "reload", "restart page"];
-const scrollDownKeywords = ["scroll down", "down"];
-const scrollUpKeywords = ["scroll up", "up"];
+const scrollDownKeywords = ["scroll down","scroll dawn", "down"];
+const scrollUpKeywords = ["scroll up","scroll app", "up"];
 
 function startListening() {
     console.log("Starting to listen...");
@@ -69,12 +69,12 @@ speechRecognition.onresult = function(event) {
             localStorage.setItem('isListening', false);
             stopListening();
             console.log("Voice control deactivated.");
-        } else if (nextKeywords.some(keyword => transcript.includes(keyword))) {
-            const nextButtons = Array.from(document.querySelectorAll("button"));
-            const nextButton = nextButtons.find(button => button.textContent.trim().toLowerCase() === "next");
-            if (nextButton) {
-                nextButton.click();
-                console.log("Next page triggered.");
+        } else if (loadKeywords.some(keyword => transcript.includes(keyword))) {
+            const loadButtons = Array.from(document.querySelectorAll("button"));
+            const loadButton = loadButtons.find(button => button.textContent.trim().toLowerCase() === "load more");
+            if (loadButton) {
+                loadButton.click();
+                console.log("load more button triggered.");
             }
         } else if (previousKeywords.some(keyword => transcript.includes(keyword))) {
             const prevButtons = Array.from(document.querySelectorAll("button"));
@@ -90,9 +90,15 @@ speechRecognition.onresult = function(event) {
             window.scrollBy(0, window.innerHeight);
             console.log("Scrolled down.");
         } else if (scrollUpKeywords.some(keyword => transcript.includes(keyword))) {
-            window.scrollBy(0, -window.innerHeight);
-            console.log("Scrolled up.");
+            const scrollupButton = document.querySelector(".scroll-to-top-btn");
+            if (scrollupButton) {
+                scrollupButton.click(); // This simulates a click on the button
+            }
         }
+        // else if (scrollUpKeywords.some(keyword => transcript.includes(keyword))) {
+        //     window.scrollBy(0, -window.innerHeight);
+        //     console.log("Scrolled up.");
+        // }
     }
 };
 
@@ -111,11 +117,11 @@ speechRecognition.onerror = function(event) {
 };
 
 // Start initial listening based on localStorage state
-if (isListening) {
-    btn.setAttribute("listening", true);
-    btn.textContent = "Stop Listening";
-    btn.classList.add("blinking");
-    startListening();
-} else {
-    btn.textContent = "Start Listening";
-}
+// if (isListening) {
+//     btn.setAttribute("listening", true);
+//     btn.textContent = "Stop Listening";
+//     btn.classList.add("blinking");
+//     startListening();
+// } else {
+//     btn.textContent = "Start Listening";
+// }
