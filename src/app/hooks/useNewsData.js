@@ -16,9 +16,7 @@ export default function useNewsData(initialPage, initialLimit, category = null) 
       try {
         let res = await axios.get(`/api/news`);
         res = res.data;
-        console.log("RESPONSE",res.length);
         setData(res);
-        console.log("data1",res.length);
         filterData(res);
         setNoMoreData(res.length==0);
       } catch (error) {
@@ -37,10 +35,12 @@ export default function useNewsData(initialPage, initialLimit, category = null) 
   const filterData = (filtered) => {
     if (category) {
       let formattedCategory = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
-      if (category === 'science%26enviroment') formattedCategory = 'Science&Environment';
+      console.log(category);
+      if (category === 'science%26enviroment') formattedCategory = 'Science&Enviroment';
       if (category === 'it') formattedCategory = 'IT';
       if (category === 'business') formattedCategory = 'Startup';
-      filtered = filtered.filter((item) => item.category === formattedCategory);
+      console.log("Format",formattedCategory);
+      filtered = filtered.filter((item) => item.category == formattedCategory);
     }
 
     const offset = (page - 1) * limit;
