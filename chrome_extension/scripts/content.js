@@ -42,6 +42,8 @@ const previousKeywords = ["previous page", "previous", "back"];
 const refreshKeywords = ["refresh", "reload", "restart page"];
 const scrollDownKeywords = ["scroll down","scroll dawn", "down"];
 const scrollUpKeywords = ["scroll up","scroll app", "up"];
+const politicsKeywords = ["go to politics", "open politics section","politics section", "open politics"];  // New keywords for politics
+
 
 function startListening() {
     console.log("Starting to listen...");
@@ -94,6 +96,9 @@ speechRecognition.onresult = function(event) {
             if (scrollupButton) {
                 scrollupButton.click(); // This simulates a click on the button
             }
+        } else if (politicsKeywords.some(keyword => transcript.includes(keyword))) {  // Navigate to politics section
+            window.location.href = "https://shamar.co.in/category/politics";
+            console.log("Navigated to politics section.");
         }
         // else if (scrollUpKeywords.some(keyword => transcript.includes(keyword))) {
         //     window.scrollBy(0, -window.innerHeight);

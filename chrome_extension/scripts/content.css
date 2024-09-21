@@ -5,12 +5,12 @@
     z-index: 1000;
     height: 63px;
     width: 63px;
-    background: linear-gradient(135deg, #ff9999, #ff6666, #ff3333);
-    border: 1px solid #44444D;
+    background: #003366e6;
+    border: 1px solid #003366;
     border-radius: 100%;
     transition: background-color 0.7s, transform 0.7s;
     font-size: small;
-    color: #44444D;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;

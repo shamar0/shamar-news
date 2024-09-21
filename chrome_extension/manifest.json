@@ -8,7 +8,7 @@
         "js": ["scripts/content.js"],
         "css":["scripts/content.css"],
         "matches": ["http://localhost:3000/news",
-                   "https://shamar-news-git-main-shamars-projects.vercel.app/*"
+                   "https://shamar.co.in/*"
                    ]
       }
     ]
