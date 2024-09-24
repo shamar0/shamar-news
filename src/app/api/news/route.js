@@ -4,7 +4,7 @@ import path from "path";
 
 export const dynamic = 'force-dynamic';
 
-let isApiFailed = true; 
+let isApiFailed = false; 
 
 export const GET = async (req, res) => {
   if (isApiFailed) {
