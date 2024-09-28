@@ -40,7 +40,7 @@ export default function useNewsData(initialPage, initialLimit, category = null) 
       if (category === 'science&enviroment') formattedCategory = 'Science&Enviroment';
       if (category === 'it') formattedCategory = 'IT';
       if (category === 'business') formattedCategory = 'Startup';
-      console.log("Format",formattedCategory);
+      // console.log("Format",formattedCategory);
       filtered = filtered.filter((item) => item.category == formattedCategory);
     }
 
