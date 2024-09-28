@@ -37,6 +37,7 @@ export default function useNewsData(initialPage, initialLimit, category = null) 
       let formattedCategory = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
       console.log(category);
       if (category === 'science%26enviroment') formattedCategory = 'Science&Enviroment';
+      if (category === 'science&enviroment') formattedCategory = 'Science&Enviroment';
       if (category === 'it') formattedCategory = 'IT';
       if (category === 'business') formattedCategory = 'Startup';
       console.log("Format",formattedCategory);
