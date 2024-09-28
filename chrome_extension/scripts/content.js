@@ -43,6 +43,17 @@ const refreshKeywords = ["refresh", "reload", "restart page"];
 const scrollDownKeywords = ["scroll down","scroll dawn", "down"];
 const scrollUpKeywords = ["scroll up","scroll app", "up"];
 const politicsKeywords = ["go to politics", "open politics section","politics section", "open politics"];  // New keywords for politics
+const educationKeywords = ["go to education", "open education section","education section", "open education"]; 
+const healthKeywords = ["go to health", "open health section","health section", "open health"];  
+const sportsKeywords = ["go to sports", "open sports section","sports section", "open sports"];  
+const businessKeywords = ["go to business", "open business section","business section", "open business"];  
+const techKeywords = ["go to tech", "open tech section","tech section", "open tech"];  
+const trendingKeywords = ["go to trending", "open trending section","trending section", "open trending"];  
+const entertainmentKeywords = ["go to entertainment", "open entertainment section","entertainment section", "open entertainment"];  
+const itKeywords = ["go to it", "open it section","it section", "open it"];  
+const sceinceenviromentKeywords = ["go to sceince enviroment", "open sceince enviroment section","sceince enviroment section", "open sceince enviroment"];  
+const evKeywords = ["go to ev", "open ev section","ev section", "open ev"];  
+const sceinceKeywords = ["go to sceince", "open sceince section","sceince section", "open sceince"];  
 
 
 function startListening() {
