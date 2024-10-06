@@ -3,7 +3,7 @@ import "./globals.css";
 import NavbarWrapper from "./_components/navbarWrapper";
 import FooterWrapper from "./_components/footerWrapper";
 import VoiceControl from "./_components/VoiceControl";
-import ScrollToTopButton from "./_components/ScrollToTopButton";
+import ScrollToTopButton from "./_components/scrollToTopButton";
 
 
 export const metadata = {
@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
           <NavbarWrapper />
           <VoiceControl/>
         <div className="main-content">
-          <ScrollToTopButton/>
+        <ScrollToTopButton/>
           {children}
         </div>
         <FooterWrapper/>
