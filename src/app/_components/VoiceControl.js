@@ -143,6 +143,8 @@ export default function VoiceControl () {
   // Handles voice commands
   const handleVoiceCommand = async (transcript) => {
     try {
+      setShowTranscriptPopup(true);
+      setPopupMessage(null);
       if (isSearchActive) {
         const searchInput = document.querySelector('.form-control');
         if (searchInput) {
@@ -217,7 +219,7 @@ export default function VoiceControl () {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     recognition.current = new SpeechRecognition();
     recognition.current.continuous = true;
-    recognition.current.lang = 'en-IN';
+    recognition.current.lang = 'en-US';
     recognition.current.interimResults = false;
 
     recognition.current.onresult = (event) => {
@@ -228,11 +230,20 @@ export default function VoiceControl () {
       handleVoiceCommand(transcript);
     };
 
-    recognition.current.onend = () => {
-      if (isListening && isRecognitionActive.current) {
-        recognition.current.start(); // Restart only if it's supposed to be listening
-      }
+    // recognition.current.onend = () => {
+    //   if (isListening && isRecognitionActive.current) {
+    //     recognition.current.start(); // Restart only if it's supposed to be listening
+    //   }
      
+    // };
+    // recognition.current.continuous = false; // Make it non-continuous
+    recognition.current.onend = () => {
+      console.log("Recognition ended.");
+      if (isListening && isRecognitionActive.current) {
+        setTimeout(() => {
+          recognition.current.start(); // Use a small delay before restarting
+        }, 500); // 500ms delay before restarting
+      }
     };
 
     // recognition.current.onerror = (event) => {
@@ -268,9 +279,14 @@ export default function VoiceControl () {
   };
 
   const stopListening = () => {
+    if (isRecognitionActive.current) {
     recognition.current.stop();
     isRecognitionActive.current = false;
     setIsListening(false);
+    }
+    else {
+      console.log("Recognition is already stop.");
+    }
   };
 
   const toggleListening = () => {

@@ -6,18 +6,18 @@
     right: 25px;   /* Default position */
     z-index: 1001;
   }
-  .mic-image{
+  /* .mic-image{
     height: 64px;
     width: 64px;
-  }
+  } */
   @media (max-width: 500px) {
     .chatbot-image {
       width: 50px;
     }
-    .mic-image{
+    /* .mic-image{
       height: 34px;
       width: 34px;
-    }
+    } */
   }
   .startBtn {
       position: fixed;
