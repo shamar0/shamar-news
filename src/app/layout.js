@@ -2,7 +2,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import NavbarWrapper from "./_components/navbarWrapper";
 import FooterWrapper from "./_components/footerWrapper";
-import ScrollToTopButton from "./_components/scrollToTopButton";
+import VoiceControl from "./_components/VoiceControl";
+import ScrollToTopButton from "./_components/ScrollToTopButton";
 
 
 export const metadata = {
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
           <NavbarWrapper />
+          <VoiceControl/>
         <div className="main-content">
           <ScrollToTopButton/>
           {children}

@@ -1,0 +1,59 @@
+.chatbot-image {
+    width: 80px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 100px; /* Default position */
+    right: 25px;   /* Default position */
+    z-index: 1001;
+  }
+  .mic-image{
+    height: 64px;
+    width: 64px;
+  }
+  @media (max-width: 500px) {
+    .chatbot-image {
+      width: 50px;
+    }
+    .mic-image{
+      height: 34px;
+      width: 34px;
+    }
+  }
+  .startBtn {
+      position: fixed;
+      bottom: 250px;
+      right: 25px;
+      z-index: 1000;
+      height: 52px;
+      width: 52px;
+      background: #003366e6;
+      border: 3px solid rgba(0, 0, 0, 0.386);
+      border-radius: 100%;
+      transition: background-color 0.7s, transform 0.7s;
+      font-size: small;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .startBtn:hover {
+      background-color: #e68100;
+    }
+    
+    .startBtn.blinking {
+      animation: blinking 2s infinite;
+    }
+    
+    @keyframes blinking {
+      0% {
+        background-color: #003366e6;
+      }
+      50% {
+        background-color: #e68100;
+      }
+      100% {
+        background-color: #003366e6;
+      }
+    }
+    
