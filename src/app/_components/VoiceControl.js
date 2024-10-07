@@ -222,6 +222,12 @@ export default function VoiceControl () {
     recognition.current.lang = 'en-US';
     recognition.current.interimResults = false;
 
+    const isMobileDevice = window.navigator.userAgentData?.mobile || /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+
+    if (isMobileDevice) {
+     recognition.current.continuous = false; // Set continuous to false for mobile to avoid duplicate speech results
+    }
+
     recognition.current.onresult = (event) => {
       const transcript = event.results[event.resultIndex][0].transcript.trim().toLowerCase();
       console.log("Heard: ",transcript);
@@ -298,59 +304,74 @@ export default function VoiceControl () {
   };
 
   const handleDragStart = (e) => {
-    e.dataTransfer.setData('text/plain', '');
+    e.dataTransfer?.setData('text/plain', '');
   };
-
+  
   const handleDragEnd = (e) => {
     const newX = e.clientX - 40; 
     const newY = e.clientY - 40; 
     setPosition({ top: `${newY}px`, left: `${newX}px`, bottom: 'auto', right: 'auto' });
   };
-
+  
+  // Handle touch events for mobile
+  const handleTouchStart = (e) => {
+    e.preventDefault();
+  };
+  
+  const handleTouchMove = (e) => {
+    const touch = e.touches[0];
+    const newX = touch.clientX - 40; 
+    const newY = touch.clientY - 40; 
+    setPosition({ top: `${newY}px`, left: `${newX}px`, bottom: 'auto', right: 'auto' });
+  };
+  
   return (
-  <div>
-  {isListening ? 
-      <img
-      onClick={toggleListening}
-      src="/mic.gif"
-      alt="AI Robot"
-      className='chatbot-image mic-image'
-      style={{ 
-        top: position.top,
-        bottom: position.bottom,
-        left: position.left,
-        right: position.right,
-        zIndex: '1001',
-      }}
-      draggable="true"
-      onDragStart={handleDragStart}
-      onDragEnd={handleDragEnd}
-      />
-      : 
-      <img
-      onClick={toggleListening}
-      src="/chatbot.gif"
-      alt="AI Robot"
-      className='chatbot-image'
-      style={{ 
-        top: position.top,
-        bottom: position.bottom,
-        left: position.left,
-        right: position.right,
-        zIndex: '1001',
-      }}
-      draggable="true"
-      onDragStart={handleDragStart}
-      onDragEnd={handleDragEnd}
-      />
+    <div>
+      {isListening ? 
+        <img
+          onClick={toggleListening}
+          src="/mic.gif"
+          alt="AI Robot"
+          className='chatbot-image mic-image'
+          style={{ 
+            top: position.top,
+            bottom: position.bottom,
+            left: position.left,
+            right: position.right,
+            zIndex: '1001',
+            position: 'absolute', // Ensure the image is positioned absolutely
+          }}
+          draggable="true"
+          onDragStart={handleDragStart}
+          onDragEnd={handleDragEnd}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+        />
+        : 
+        <img
+          onClick={toggleListening}
+          src="/chatbot.gif"
+          alt="AI Robot"
+          className='chatbot-image'
+          style={{ 
+            top: position.top,
+            bottom: position.bottom,
+            left: position.left,
+            right: position.right,
+            zIndex: '1001',
+            position: 'absolute', // Ensure the image is positioned absolutely
+          }}
+          draggable="true"
+          onDragStart={handleDragStart}
+          onDragEnd={handleDragEnd}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+        />
       }
       {showTranscriptPopup && 
         <Popup message={`${transcripts}`} onClose={closeTranscriptPopup} isTranscript={true}/>
       }
       {popupMessage && <Popup message={popupMessage} onClose={closePopup} isTranscript={false} />}
     </div>
-  
-
-
   );
 }
