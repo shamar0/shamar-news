@@ -222,12 +222,6 @@ export default function VoiceControl () {
     recognition.current.lang = 'en-US';
     recognition.current.interimResults = false;
 
-    const isMobileDevice = window.navigator.userAgentData?.mobile || /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
-
-    if (isMobileDevice) {
-     recognition.current.continuous = false; // Set continuous to false for mobile to avoid duplicate speech results
-    }
-
     recognition.current.onresult = (event) => {
       const transcript = event.results[event.resultIndex][0].transcript.trim().toLowerCase();
       console.log("Heard: ",transcript);
@@ -236,27 +230,15 @@ export default function VoiceControl () {
       handleVoiceCommand(transcript);
     };
 
-    // recognition.current.onend = () => {
-    //   if (isListening && isRecognitionActive.current) {
-    //     recognition.current.start(); // Restart only if it's supposed to be listening
-    //   }
-     
-    // };
-    // recognition.current.continuous = false; // Make it non-continuous
     recognition.current.onend = () => {
       console.log("Recognition ended.");
       if (isListening && isRecognitionActive.current) {
-        setTimeout(() => {
-          recognition.current.start(); // Use a small delay before restarting
-        }, 500); // 500ms delay before restarting
+        console.log("Listening after Recognition ended");
+        recognition.current.start(); // Restart only if it's supposed to be listening
       }
-    };
+    }
+     
 
-    // recognition.current.onerror = (event) => {
-    //   if (isListening && isRecognitionActive.current) {
-    //     recognition.current.start(); // Handle error by restarting
-    //   }
-    // };
     recognition.current.onerror = (event) => {
       console.error('Speech recognition error', event.error);
       if (event.error === 'no-speech') {
@@ -265,10 +247,6 @@ export default function VoiceControl () {
       }
     };
 
-    // return () => {
-    //   recognition.current.stop();
-    //   isRecognitionActive.current = false;
-    // };
     return () => {
       recognition.current && recognition.current.stop();
     };
@@ -304,18 +282,21 @@ export default function VoiceControl () {
   };
 
   const handleDragStart = (e) => {
-    e.dataTransfer?.setData('text/plain', '');
+    e.dataTransfer.setData('text/plain', '');
   };
-  
+
   const handleDragEnd = (e) => {
-    const newX = e.clientX - 40; 
-    const newY = e.clientY - 40; 
+    const newX = e.clientX - 10; 
+    const newY = e.clientY - 10; 
     setPosition({ top: `${newY}px`, left: `${newX}px`, bottom: 'auto', right: 'auto' });
   };
-  
-  // Handle touch events for mobile
+
   const handleTouchStart = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
+    document.body.classList.add('no-scroll');
+  };
+  const handleTouchEnd = () => {
+    document.body.classList.remove('no-scroll'); // Re-enable scroll after touch ends
   };
   
   const handleTouchMove = (e) => {
@@ -324,54 +305,57 @@ export default function VoiceControl () {
     const newY = touch.clientY - 40; 
     setPosition({ top: `${newY}px`, left: `${newX}px`, bottom: 'auto', right: 'auto' });
   };
-  
+
   return (
-    <div>
-      {isListening ? 
-        <img
-          onClick={toggleListening}
-          src="/mic.gif"
-          alt="AI Robot"
-          className='chatbot-image mic-image'
-          style={{ 
-            top: position.top,
-            bottom: position.bottom,
-            left: position.left,
-            right: position.right,
-            zIndex: '1001',
-            position: 'absolute', // Ensure the image is positioned absolutely
-          }}
-          draggable="true"
-          onDragStart={handleDragStart}
-          onDragEnd={handleDragEnd}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-        />
-        : 
-        <img
-          onClick={toggleListening}
-          src="/chatbot.gif"
-          alt="AI Robot"
-          className='chatbot-image'
-          style={{ 
-            top: position.top,
-            bottom: position.bottom,
-            left: position.left,
-            right: position.right,
-            zIndex: '1001',
-            position: 'absolute', // Ensure the image is positioned absolutely
-          }}
-          draggable="true"
-          onDragStart={handleDragStart}
-          onDragEnd={handleDragEnd}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-        />
+  <div>
+  {isListening ? 
+      <img
+      onClick={toggleListening}
+      src="/mic.gif"
+      alt="AI Robot"
+      className='chatbot-image mic-image'
+      style={{ 
+        top: position.top,
+        bottom: position.bottom,
+        left: position.left,
+        right: position.right,
+        zIndex: '1001',
+      }}
+      draggable="true"
+      onDragStart={handleDragStart}
+      onDragEnd={handleDragEnd}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      />
+      : 
+      <img
+      onClick={toggleListening}
+      src="/chatbot.gif"
+      alt="AI Robot"
+      className='chatbot-image'
+      style={{ 
+        top: position.top,
+        bottom: position.bottom,
+        left: position.left,
+        right: position.right,
+        zIndex: '1001',
+      }}
+      draggable="true"
+      onDragStart={handleDragStart}
+      onDragEnd={handleDragEnd}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      />
       }
       {showTranscriptPopup && 
         <Popup message={`${transcripts}`} onClose={closeTranscriptPopup} isTranscript={true}/>
       }
       {popupMessage && <Popup message={popupMessage} onClose={closePopup} isTranscript={false} />}
     </div>
+  
+
+
   );
 }

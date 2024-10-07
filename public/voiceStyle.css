@@ -1,3 +1,8 @@
+.no-scroll {
+  overflow: hidden !important; /* Hide scrollbars */
+  touch-action: none; /* Prevent touch scrolling */
+}
+
 .chatbot-image {
     width: 80px;
     cursor: pointer;
