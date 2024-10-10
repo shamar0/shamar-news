@@ -1,4 +1,4 @@
-'use client';
+'use client'; 
 import Home from "./home";
 import Loading from "../loading";
 import '../../../public/style.css'
@@ -6,8 +6,8 @@ import useNewsData from "../hooks/useNewsData";
 import { useEffect, useState } from "react";
 import SecondLoading from "../second_loading";
 
-export default function CategoryPage({category, initialPage, initialLimit}) {
-  const { page, filteredData, loading, noMoreData, handleNavigation } = useNewsData(initialPage, initialLimit, category);
+export default function Search({ initialPage, initialLimit, search }) {
+  const { page, filteredData, loading, noMoreData, handleNavigation } = useNewsData(initialPage, initialLimit,null, search);
   // State to track initial loading status
   const [initialLoading, setInitialLoading] = useState(true);
 
@@ -47,7 +47,7 @@ export default function CategoryPage({category, initialPage, initialLimit}) {
             </div>
           ) : (
             <h3 style={{ color: "#F7941F", display: "flex", justifyContent: "center", alignItems: "center", marginTop: "10px" }}>
-              No more data found!
+              Oops! No data found. Try to search another topic
             </h3>
           )}
         </>

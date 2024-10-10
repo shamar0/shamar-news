@@ -5,8 +5,7 @@ import Category from './category';
 import Image from 'next/image';
 
 export default function Home({ data }) {
-  
-
+  console.log("HOMEDATA",data);
   const handleShare = async (title,read_more) => {
     if (navigator.share) {
       try {
