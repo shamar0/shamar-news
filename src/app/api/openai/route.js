@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import axios from 'axios';
 
 export async function POST(req) {
-  try {
+  try { 
     const { transcript } = await req.json();
 
     const response = await axios.post(
