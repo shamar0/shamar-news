@@ -20,6 +20,7 @@ export default function Popup({ message, onClose, isTranscript }) {
 
     return () => clearInterval(intervalId);
   }, [message]);
+  
 
   const styles = {
     '@keyframes animateBorder': {

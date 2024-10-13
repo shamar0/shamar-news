@@ -81,7 +81,7 @@ export default function PageClient({ initialPage, initialLimit }) {
             <div className="btn-container">
               <div className="next-btn nxpv-btn">
                 <button
-                  className="btn"
+                  className="btn load-more"
                   onClick={() => handleNavigation(page + 1)}
                 >
                   Load More

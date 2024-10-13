@@ -66,7 +66,7 @@ export default function ScrollToTopButton() {
                         onMouseLeave={() => setIsHovered(false)}
                         className="scroll-to-top-btn"
                         style={buttonStyle} >
-                        <i class="fa-solid fa-angle-up" style={{ color: "#fff" }}></i>
+                        <i className="fa-solid fa-angle-up" style={{ color: "#fff" }}></i>
                     </button>
                 </div>
             )}
