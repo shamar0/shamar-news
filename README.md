@@ -27,4 +27,6 @@ Smooth Navigation: The site is designed to handle large amounts of news efficien
 
 Modern and Responsive Design: Built with the latest web technologies, the website offers a sleek and modern look that works well on both desktop and mobile devices.
 
-Voice Assistant Integration: Users can navigate the website using voice commands such as "next page or go to next page", "previous page", "refresh", "scroll down", and "scroll up", making it more accessible and interactive.
+Implemented OpenAI's ChatGPT to provide fully voice-command assistance for my application! 🎤💬
+With this new feature, users will be able to interact hands-free, making the experience more seamless and accessible. Whether it's navigating through the app, performing specific actions, or getting real-time information, our voice assistant will be there to handle it all.
+Stay tuned for more updates! 🔊✨
