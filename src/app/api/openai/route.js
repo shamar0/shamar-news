@@ -29,7 +29,8 @@ export async function POST(req) {
              "9. **Trending**: 'latest', 'trending', 'new arrivals', 'new articles' -> clickTrendingCategory()\n" +
              "10. **Ev**: 'Electric Vehicles', 'EV', 'Ev news' -> clickEvCategory()\n" +
              "11. **It**: 'corporate news', 'TCS News', 'IT companies' -> clickItCategory()\n" +
-             "11. **All**: 'move to home page', 'All News', -> clickAllCategory()\n" +
+             "12. **All**: 'move to home page', 'All News', -> clickAllCategory()\n" +
+             "13. **Headline**: 'read headline', 'read article', 'read this shown articles', -> readHeadline()\n" +
              "Action Mappings:\n" +
              "1. 'scroll down', 'show more', 'more content', 'next section' -> scrollDown()\n" +
              "2. 'scroll up', 'previous section', 'go up' -> scrollUp()\n" +
