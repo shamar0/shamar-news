@@ -24,6 +24,7 @@ export default function VoiceControl() {
   const timeoutRef = useRef(null);
 
   const openSearch = () => {
+    // setIsSearchMode(true);
     setIsSearchMode(true);
     setIsSearchActive(true);
     const searchInput = document.querySelector(".form-control");
@@ -42,9 +43,9 @@ export default function VoiceControl() {
 
         timeoutRef.current = setTimeout(() => {
           handleSearch(transcripts);
-          setIsSearchActive(false);
+          // setIsSearchActive(false);
           searchInput.blur();
-        }, 2000);
+        }, 1000);
       }
     }
   }, [transcripts, isSearchActive]);
@@ -147,6 +148,10 @@ export default function VoiceControl() {
 
   // Handles voice commands
   const handleVoiceCommand = async (transcript) => {
+    if (isSearchActive) {
+      // console.log("Search is active, skipping voice command handling.");
+      return;
+    }
     try {
       setShowTranscriptPopup(true);
       setPopupMessage(null);
@@ -230,7 +235,7 @@ export default function VoiceControl() {
     recognition.current.continuous = true;
     recognition.current.lang = "en-US";
     recognition.current.interimResults = false;
-
+  
     recognition.current.onresult = (event) => {
       const transcript = event.results[event.resultIndex][0].transcript
         .trim()
@@ -238,9 +243,16 @@ export default function VoiceControl() {
       console.log("Heard: ", transcript);
       setTranscripts(transcript);
       setShowTranscriptPopup(true);
-      handleVoiceCommand(transcript);
+      if (!isSearchActive) {
+        console.log("isSearchActive in if",isSearchActive)
+        console.log("Calling handleVoiceCommand");
+        handleVoiceCommand(transcript);
+      } else {
+        console.log("isSearchMode in else ",isSearchMode)
+        console.log("Search mode is active, skipping handleVoiceCommand.");
+      }
     };
-
+  
     recognition.current.onend = () => {
       console.log("Recognition ended.");
       if (isListening && isRecognitionActive.current) {
@@ -272,9 +284,15 @@ export default function VoiceControl() {
       } else if (event.error === "no-speech") {
         console.log("No speech detected, stopping recognition.");
         isRecognitionActive.current = false;
+        setIsListening(false);
       }
     };
-
+  
+    // Start recognition if conditions are met
+    if (isListening && isRecognitionActive.current) {
+      recognition.current.start();
+    }
+  
     return () => {
       recognition.current && recognition.current.stop();
     };
@@ -306,6 +324,8 @@ export default function VoiceControl() {
     }
   };
 
+  
+  // Function to toggle listening state
   const toggleListening = () => {
     if (isListening) {
       stopListening();
@@ -313,6 +333,7 @@ export default function VoiceControl() {
       startListening();
     }
   };
+  
 
   const handleDragStart = (e) => {
     e.dataTransfer.setData("text/plain", "");
